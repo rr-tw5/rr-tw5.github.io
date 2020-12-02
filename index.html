@@ -763,8 +763,6 @@ Error message and password prompt
 
 <li>Download This Wiki as index.html</li>
 
-<li>Draft of '$:/core/ui/ControlPanel/KeyboardShortcuts'</li>
-
 <li>Draft of '2020/10/26'</li>
 
 <li>dreams</li>
@@ -16544,7 +16542,7 @@ Unlinked References&lt;/h3&gt;&lt;/$reveal&gt;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20201202072959018" list="[[Download This Wiki as index.html]] [[DAILY NOTES]]" modified="20201202075830454" title="$:/StoryList">
+<div created="20201202072959018" list="[[Download This Wiki as index.html]] [[DAILY NOTES]]" modified="20201202080239564" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201201192313651" list="$:/rr/Buttons/PageControl/new-DAILYNOTE+HOME $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/rr/Buttons/PageControls/DatePicker $:/themes/jd/Mono/Buttons/switch-palette $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions $:/_sq/Stories/Templates/StoryTogglePageControl $:/rr/PageControls/Show-Hide-References" modified="20201201192404331" title="$:/tags/PageControls">
@@ -20885,146 +20883,6 @@ select {
 <pre>{{$:/snippets/download-wiki-button}}
 
 To edit the button: [[$:/snippets/download-wiki-button]]</pre>
-</div>
-<div bag="default" caption="{{$:/language/ControlPanel/KeyboardShortcuts/Caption}}" created="20201111180739737" draft.of="$:/core/ui/ControlPanel/KeyboardShortcuts" draft.title="$:/core/ui/ControlPanel/KeyboardShortcuts" modified="20201202075306539" revision="0" rr-mod="Something in the WhiteSpace theme causes pages not to fit well, made this mod to allow access to the add shortcuts button" tags="$:/tags/ControlPanel rr-UI-mod rr-UI rr-TW5" title="Draft of '$:/core/ui/ControlPanel/KeyboardShortcuts'" type="text/vnd.tiddlywiki">
-<pre>\define lingo-base() $:/language/ControlPanel/KeyboardShortcuts/
-
-\define new-shortcut(title)
-&lt;div class=&quot;tc-dropdown-item-plain&quot;&gt;
-&lt;br&gt;
-&lt;$edit-shortcut tiddler=&quot;$title$&quot; placeholder={{$:/language/ControlPanel/KeyboardShortcuts/Add/Prompt}} focus=&quot;true&quot; style=&quot;width:90px;&quot; /&gt; &lt;$button&gt;
-&lt;&lt;lingo Add/Caption&gt;&gt;
-&lt;$action-listops
-	$tiddler=&quot;$(shortcutTitle)$&quot;
-	$field=&quot;text&quot;
-	$subfilter=&quot;[{$title$}]&quot;
-/&gt;
-&lt;$action-deletetiddler
-	$tiddler=&quot;$title$&quot;
-/&gt;
-&lt;/$button&gt;
-&lt;/div&gt;
-\end
-
-\define shortcut-list-item(caption)
-&lt;td&gt;
-&lt;/td&gt;
-&lt;td style=&quot;text-align:right;font-size:0.7em;&quot;&gt;
-&lt;&lt;lingo Platform/$caption$&gt;&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;div style=&quot;position:relative;&quot;&gt;
-&lt;$button popup=&lt;&lt;qualify &quot;$:/state/dropdown/$(shortcutTitle)$&quot;&gt;&gt; class=&quot;tc-btn-invisible&quot;&gt;
-{{$:/core/images/edit-button}}
-&lt;/$button&gt;
-&lt;$macrocall $name=&quot;displayshortcuts&quot; $output=&quot;text/html&quot; shortcuts={{$(shortcutTitle)$}} prefix=&quot;&lt;kbd&gt;&quot; separator=&quot;&lt;/kbd&gt; &lt;kbd&gt;&quot; suffix=&quot;&lt;/kbd&gt;&quot;/&gt;
-
-&lt;$reveal state=&lt;&lt;qualify &quot;$:/state/dropdown/$(shortcutTitle)$&quot;&gt;&gt; type=&quot;popup&quot; position=&quot;left&quot; animate=&quot;yes&quot;&gt;
-&lt;div class=&quot;tc-block-dropdown-wrapper&quot;&gt;
-&lt;div class=&quot;tc-block-dropdown tc-edit-type-dropdown tc-popup-keep&quot;&gt;
-&lt;$list filter=&quot;[list[$(shortcutTitle)$!!text]sort[title]]&quot; variable=&quot;shortcut&quot; emptyMessage=&quot;&quot;&quot;
-&lt;div class=&quot;tc-dropdown-item-plain&quot;&gt;
-//&lt;&lt;lingo NoShortcuts/Caption&gt;&gt;//
-&lt;/div&gt;
-&quot;&quot;&quot;&gt;
-&lt;div class=&quot;tc-dropdown-item-plain&quot;&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot; tooltip={{$:/language/ControlPanel/KeyboardShortcuts/Remove/Hint}}&gt;
-&lt;$action-listops
-	$tiddler=&quot;$(shortcutTitle)$&quot;
-	$field=&quot;text&quot;
-	$subfilter=&quot;+[remove&lt;shortcut&gt;]&quot;
-/&gt;
-&lt;small&gt;{{$:/core/images/close-button}}&lt;/small&gt;
-&lt;/$button&gt;
-&lt;kbd&gt;
-&lt;$macrocall $name=&quot;displayshortcuts&quot; $output=&quot;text/html&quot; shortcuts=&lt;&lt;shortcut&gt;&gt;/&gt;
-&lt;/kbd&gt;
-&lt;/div&gt;
-&lt;/$list&gt;
-&lt;hr/&gt;
-&lt;$macrocall $name=&quot;new-shortcut&quot; title=&lt;&lt;qualify &quot;$:/state/new-shortcut/$(shortcutTitle)$&quot;&gt;&gt;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/$reveal&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-\end
-
-\define shortcut-list(caption,prefix)
-&lt;tr&gt;
-&lt;$list filter=&quot;[[$prefix$$(shortcutName)$]]&quot; variable=&quot;shortcutTitle&quot;&gt;
-&lt;&lt;shortcut-list-item &quot;$caption$&quot;&gt;&gt;
-&lt;/$list&gt;
-&lt;/tr&gt;
-\end
-
-\define shortcut-editor()
-&lt;&lt;shortcut-list &quot;All&quot; &quot;$:/config/shortcuts/&quot;&gt;&gt;
-&lt;&lt;shortcut-list &quot;Mac&quot; &quot;$:/config/shortcuts-mac/&quot;&gt;&gt;
-&lt;&lt;shortcut-list &quot;NonMac&quot; &quot;$:/config/shortcuts-not-mac/&quot;&gt;&gt;
-&lt;&lt;shortcut-list &quot;Linux&quot; &quot;$:/config/shortcuts-linux/&quot;&gt;&gt;
-&lt;&lt;shortcut-list &quot;NonLinux&quot; &quot;$:/config/shortcuts-not-linux/&quot;&gt;&gt;
-&lt;&lt;shortcut-list &quot;Windows&quot; &quot;$:/config/shortcuts-windows/&quot;&gt;&gt;
-&lt;&lt;shortcut-list &quot;NonWindows&quot; &quot;$:/config/shortcuts-not-windows/&quot;&gt;&gt;
-\end
-
-\define shortcut-preview()
-&lt;$macrocall $name=&quot;displayshortcuts&quot; $output=&quot;text/html&quot; shortcuts={{$(shortcutPrefix)$$(shortcutName)$}} prefix=&quot;&lt;kbd&gt;&quot; separator=&quot;&lt;/kbd&gt; &lt;kbd&gt;&quot; suffix=&quot;&lt;/kbd&gt;&quot;/&gt;
-\end
-
-\define shortcut-item-inner()
-&lt;tr&gt;
-&lt;td&gt;
-&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;dropdownStateTitle&gt;&gt; text=&quot;open&quot;&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-&lt;$action-setfield
-	$tiddler=&lt;&lt;dropdownStateTitle&gt;&gt;
-	$value=&quot;open&quot;
-/&gt;
-{{$:/core/images/right-arrow}}
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;$reveal type=&quot;match&quot; state=&lt;&lt;dropdownStateTitle&gt;&gt; text=&quot;open&quot;&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-&lt;$action-setfield
-	$tiddler=&lt;&lt;dropdownStateTitle&gt;&gt;
-	$value=&quot;close&quot;
-/&gt;
-{{$:/core/images/down-arrow}}
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-''&lt;$text text=&lt;&lt;shortcutName&gt;&gt;/&gt;''
-&lt;/td&gt;
-&lt;td&gt;
-&lt;$transclude tiddler=&quot;$:/config/ShortcutInfo/$(shortcutName)$&quot;/&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;$list filter=&quot;$:/config/shortcuts/ $:/config/shortcuts-mac/ $:/config/shortcuts-not-mac/ $:/config/shortcuts-linux/ $:/config/shortcuts-not-linux/ $:/config/shortcuts-windows/ $:/config/shortcuts-not-windows/&quot; variable=&quot;shortcutPrefix&quot;&gt;
-&lt;&lt;shortcut-preview&gt;&gt;
-&lt;/$list&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;$set name=&quot;dropdownState&quot; value={{$(dropdownStateTitle)$}}&gt;
-&lt;$list filter=&quot;[&lt;dropdownState&gt;match[open]]&quot; variable=&quot;listItem&quot;&gt;
-&lt;&lt;shortcut-editor&gt;&gt;
-&lt;/$list&gt;
-&lt;/$set&gt;
-\end
-
-\define shortcut-item()
-&lt;$set name=&quot;dropdownStateTitle&quot; value=&lt;&lt;qualify &quot;$:/state/dropdown/keyboardshortcut/$(shortcutName)$&quot;&gt;&gt;&gt;
-&lt;&lt;shortcut-item-inner&gt;&gt;
-&lt;/$set&gt;
-\end
-
-&lt;table&gt;
-&lt;tbody&gt;
-&lt;$list filter=&quot;[all[shadows+tiddlers]removeprefix[$:/config/ShortcutInfo/]]&quot; variable=&quot;shortcutName&quot;&gt;
-&lt;&lt;shortcut-item&gt;&gt;
-&lt;/$list&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</pre>
 </div>
 <div modified="20201026123826206" title="Draft of '2020/10/26'">
 <pre></pre>
