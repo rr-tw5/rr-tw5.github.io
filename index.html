@@ -227,6 +227,8 @@ Error message and password prompt
 
 <li>$:/config/shortcuts/revealPinnedSideBar</li>
 
+<li>$:/config/shortcuts/sidebar-search</li>
+
 <li>$:/config/shortcuts/streams-demote</li>
 
 <li>$:/config/shortcuts/streams-focus-higher</li>
@@ -531,11 +533,15 @@ Error message and password prompt
 
 <li>$:/state/advancedsearch/currentTab</li>
 
+<li>$:/state/dropdown/keyboardshortcut/sidebar-search-286565879</li>
+
 <li>$:/state/palettemanager/$:/palettes/rr/DayMode/menubar-foreground</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/menubar</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/menubar--331413611</li>
+
+<li>$:/state/search/currentTab</li>
 
 <li>$:/state/ShowPaletteEditor</li>
 
@@ -550,6 +556,8 @@ Error message and password prompt
 <li>$:/state/tab--86143343</li>
 
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab/search-results/sidebar</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
 
@@ -772,6 +780,22 @@ Error message and password prompt
 <li>A quick tour/20210213144251694</li>
 
 <li>A quick tour/20210213144313882</li>
+
+<li>A quick tour/20210213150644963</li>
+
+<li>A quick tour/20210213150655684</li>
+
+<li>A quick tour/20210213150726459</li>
+
+<li>A quick tour/20210213150738101</li>
+
+<li>A quick tour/20210213150750739</li>
+
+<li>A quick tour/20210213150852355</li>
+
+<li>A quick tour/20210213150927362</li>
+
+<li>A quick tour/20210213150957533</li>
 
 <li>ALL DAILY NOTES</li>
 
@@ -1339,6 +1363,8 @@ Error message and password prompt
 
 <li>Welcome/20201031062455222</li>
 
+<li>what</li>
+
 </ul>
 </p>
 
@@ -1468,10 +1494,10 @@ Error message and password prompt
 <div created="20201201192342772" modified="20201201192342772" title="$:/config/PageControlButtons/Visibility/$:/rr/PageControls/Show-Hide-References">
 <pre>hide</pre>
 </div>
-<div created="20210212142758394" modified="20210213144438982" title="$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/contents">
+<div created="20210212142758394" modified="20210213144904278" title="$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/contents">
 <pre>hide</pre>
 </div>
-<div created="20210212142758394" modified="20210213144438982" title="$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/hamburger">
+<div created="20210212142758394" modified="20210213144904278" title="$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/hamburger">
 <pre>hide</pre>
 </div>
 <div created="20210212142842192" modified="20210212195912023" title="$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/pagecontrols">
@@ -1518,6 +1544,9 @@ Error message and password prompt
 </div>
 <div bag="default" created="20210211160556917" modified="20210211160750242" revision="2" tags="rr-TW5 rr-UX" title="$:/config/shortcuts/revealPinnedSideBar" type="text/vnd.tiddlywiki">
 <pre>shift-alt-ctrl-S</pre>
+</div>
+<div created="20210213150542159" modified="20210213150542159" title="$:/config/shortcuts/sidebar-search">
+<pre>ctrl-shift-F alt-U</pre>
 </div>
 <div bag="default" created="20200914163104446" modified="20210212141034233" revision="0" tags="rr-streams-mod rr-TW5" title="$:/config/shortcuts/streams-demote" type="text/vnd.tiddlywiki">
 <pre>ctrl-alt-Down</pre>
@@ -11581,7 +11610,7 @@ $:/config/EditToolbarButtons/Visibility/$(listItem)$
 &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; default={{$:/config/DefaultMoreSidebarTab}} state=&quot;$:/state/tab/moresidebar&quot; class=&quot;tc-vertical tc-sidebar-tabs-more&quot; /&gt;
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" caption="RECENTLY ACCESSED" created="20201227154039983" modified="20210213144438983" revision="57" rr-mod="Added caption field: RECENTLY ACCESSED" tags="$:/tags/SideBar rr-TW5 rr-UX-mod" title="$:/core/ui/SideBar/Open" type="text/vnd.tiddlywiki">
+<div bag="default" caption="RECENTLY ACCESSED" created="20201227154039983" modified="20210213144904279" revision="57" rr-mod="Added caption field: RECENTLY ACCESSED" tags="$:/tags/SideBar rr-TW5 rr-UX-mod" title="$:/core/ui/SideBar/Open" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 \define lingo-base() $:/language/CloseAll/
 
@@ -11847,7 +11876,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20210213124753025" modified="20210213124757024" title="$:/DefaultTiddlers">
 <pre>[[DAILY NOTES]]</pre>
 </div>
-<div bag="default" created="20210210181701060" creator="akhater" list-before="$:/core/ui/SideBar/Open" modified="20210213144438978" modifier="akhater" revision="118" tags="" title="$:/drift/side-by-side" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210210181701060" creator="akhater" list-before="$:/core/ui/SideBar/Open" modified="20210213144904275" modifier="akhater" revision="118" tags="" title="$:/drift/side-by-side" type="text/vnd.tiddlywiki">
 <pre>\define drop-actions()
 &lt;$action-listops $tiddler=&quot;$:/rr/pinned&quot; $subfilter=&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
 &lt;$fieldmangler tiddler=&lt;&lt;actionTiddler&gt;&gt;&gt;
@@ -15933,7 +15962,7 @@ Copy stream to clipboard as `&lt;ul&gt;&lt;li&gt;` list
 &lt;p align=right&gt;&lt;small&gt;(//Transclusion of [[$X$]] as list//)&lt;/small&gt;&lt;/p&gt;
 \end</pre>
 </div>
-<div bag="default" created="20210210175237537" modified="20210213144438978" revision="43" tags="rr-TW5 rr-UX" title="$:/rr/pinned" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210210175237537" modified="20210213144904274" revision="43" tags="rr-TW5 rr-UX" title="$:/rr/pinned" type="text/vnd.tiddlywiki">
 <pre>inactive</pre>
 </div>
 <div bag="default" caption="{{$:/core/images/close-button}} {{$:/language/Buttons/Close/Caption}}" created="20210103082124883" creator="akhater" description="{{$:/language/Buttons/Close/Hint}}" modified="20210211165206078" modifier="akhater" revision="19" tags="rr-UX rr-TW5" title="$:/rr/side-by-side/Buttons/close" type="text/vnd.tiddlywiki">
@@ -16059,14 +16088,14 @@ $:/state/folded/$(currentTiddler)$
 &lt;/div&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div bag="default" caption="RR-TW5" created="20201022113249513" list-before="$:/core/ui/SideBar/Open" modified="20210213144438982" revision="57" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Core" type="text/vnd.tiddlywiki">
+<div bag="default" caption="RR-TW5" created="20201022113249513" list-before="$:/core/ui/SideBar/Open" modified="20210213144904278" revision="57" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Core" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc 'rr-core-page'&gt;&gt;
 
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" caption="SHORTCUTS" created="20201103094201681" list-after="$:/rr/SideBar/Core" modified="20210213144438983" revision="57" stream-list="" stream-type="default" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Shortcuts" type="text/vnd.tiddlywiki">
+<div bag="default" caption="SHORTCUTS" created="20201103094201681" list-after="$:/rr/SideBar/Core" modified="20210213144904279" revision="57" stream-list="" stream-type="default" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Shortcuts" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc &quot;rr-shortcuts&quot; &quot;!tag[nolist]sort[created]&quot;&gt;&gt;
@@ -16495,19 +16524,25 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210212195452718" modified="20210213142912075" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
+<div created="20210213150536401" modified="20210213150548889" title="$:/state/dropdown/keyboardshortcut/sidebar-search-286565879">
+<pre>close</pre>
+</div>
 <div created="20210213125905648" modified="20210213125905648" title="$:/state/palettemanager/$:/palettes/rr/DayMode/menubar-foreground">
 <pre>show</pre>
 </div>
-<div created="20210212142641159" modified="20210212142806196" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/menubar">
-<pre>yes</pre>
+<div created="20210212142641159" modified="20210213145906562" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/menubar">
+<pre>no</pre>
 </div>
 <div created="20210212142642728" modified="20210213130059488" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/menubar--331413611">
 <pre>contents</pre>
 </div>
+<div created="20210213150454705" modified="20210213150457405" title="$:/state/search/currentTab">
+<pre>$:/core/ui/DefaultSearchResultList</pre>
+</div>
 <div created="20210213125853136" modified="20210213125853136" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
-<div created="20210212142758393" modified="20210213144438982" title="$:/state/sidebar">
+<div created="20210212142758393" modified="20210213144904277" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210213143627858" modified="20210213143633743" title="$:/state/sq/streams/current-edit-tiddler--1210650108">
@@ -16522,10 +16557,13 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210213124458464" modified="20210213130054074" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
 </div>
-<div created="20210212142638676" modified="20210213130319027" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20210212142638676" modified="20210213150515877" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/KeyboardShortcuts</pre>
 </div>
-<div created="20210212142550455" modified="20210213144438982" title="$:/state/tab/sidebar--595412856">
+<div created="20210213150454706" modified="20210213150457406" title="$:/state/tab/search-results/sidebar">
+<pre>$:/core/ui/DefaultSearchResultList</pre>
+</div>
+<div created="20210212142550455" modified="20210213144904278" title="$:/state/tab/sidebar--595412856">
 <pre>$:/drift/side-by-side</pre>
 </div>
 <div created="20210213123539251" modified="20210213125557080" title="$:/state/tab1-488476099">
@@ -16549,7 +16587,7 @@ $:/core/images/storyview-$(storyview)$
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210213142601792" list="[[DAILY NOTES]]" modified="20210213144450540" title="$:/StoryList">
+<div created="20210213144853039" list="[[DAILY NOTES]]" modified="20210213151101051" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20201231174724669" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/sidebar $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar" modified="20210212140949203" revision="8" tags="rr-TW5 rr-UI-mod" title="$:/tags/MenuBar" type="text/vnd.tiddlywiki">
@@ -16737,10 +16775,10 @@ $:/core/images/storyview-$(storyview)$
 <div bag="default" created="20201022115207543" modified="20201022115228847" revision="0" title="$:/themes/tiddlywiki/vanilla/metrics/lineheight" type="text/vnd.tiddlywiki">
 <pre>20px</pre>
 </div>
-<div created="20210212142758393" modified="20210213144438981" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
+<div created="20210212142758393" modified="20210213144904277" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
 <pre>330px</pre>
 </div>
-<div bag="default" created="20200127172539001" modified="20210213143056981" revision="0" tags="tb" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200127172539001" modified="20210213144859326" revision="0" tags="tb" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
 </div>
 <div created="20210213144029302" modified="20210213144031522" title="$:/view">
@@ -16860,7 +16898,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210213130757644" modified="20210213130842063" parent="A clean interface" stream-list="" stream-type="default" title="A clean interface/20210213130757639">
 <pre>Plus you can change how many pages appear at any time.</pre>
 </div>
-<div created="20210213135343826" modified="20210213144435645" stream-list="[[A quick tour/20210213135446566]] [[A quick tour/20210213135755066]] [[A quick tour/20210213140057029]] [[A quick tour/20210213143810830]] [[A quick tour/20210213144313882]]" stream-type="default" tags="" title="A quick tour">
+<div created="20210213135343826" modified="20210213144859334" stream-list="[[A quick tour/20210213135446566]] [[A quick tour/20210213135755066]] [[A quick tour/20210213140057029]] [[A quick tour/20210213143810830]] [[A quick tour/20210213144313882]]" stream-type="default" tags="$:/rr/pinned" time-pinned="20210213144859" title="A quick tour">
 <pre></pre>
 </div>
 <div created="20210213135446569" modified="20210213144349716" parent="A quick tour" stream-list="[[A quick tour/20210213135503415]] [[A quick tour/20210213135640610]]" stream-type="default" title="A quick tour/20210213135446566">
@@ -16884,7 +16922,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210213135921840" modified="20210213140053900" parent="A quick tour/20210213135755066" stream-type="default" title="A quick tour/20210213135921836">
 <pre>And if you already see the [[DAILY NOTES]] page it will say //Add Today's Page// that is link to create it also</pre>
 </div>
-<div created="20210213140057044" modified="20210213144340762" parent="A quick tour" stream-list="[[A quick tour/20210213140112877]] [[A quick tour/20210213140502613]] [[A quick tour/20210213140512461]] [[A quick tour/20210213140738170]] [[A quick tour/20210213140443751]]" stream-type="default" title="A quick tour/20210213140057029">
+<div created="20210213140057044" modified="20210213150656066" parent="A quick tour" stream-list="[[A quick tour/20210213140112877]] [[A quick tour/20210213140502613]] [[A quick tour/20210213140512461]] [[A quick tour/20210213140738170]] [[A quick tour/20210213150644963]] [[A quick tour/20210213140443751]]" stream-type="default" title="A quick tour/20210213140057029">
 <pre>!!! When you've done that we can add some notes</pre>
 </div>
 <div created="20210213140112881" modified="20210213140502621" parent="A quick tour/20210213140057029" stream-list="" stream-type="default" title="A quick tour/20210213140112877">
@@ -16914,7 +16952,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210213140657800" modified="20210213140724914" parent="A quick tour/20210213140502613" stream-type="default" title="A quick tour/20210213140657797">
 <pre>Press &lt;kbd&gt;shift-tab&lt;/kbd&gt; to un-indent the next block</pre>
 </div>
-<div created="20210213140738174" modified="20210213140828798" parent="A quick tour/20210213140057029" stream-list="[[A quick tour/20210213140804289]] [[A quick tour/20210213140828791]]" stream-type="default" title="A quick tour/20210213140738170">
+<div created="20210213140738174" modified="20210213150645901" parent="A quick tour/20210213140057029" stream-list="[[A quick tour/20210213140804289]] [[A quick tour/20210213140828791]]" stream-type="default" title="A quick tour/20210213140738170">
 <pre>Go to that page and you will see the Linked Reference refers back to where you added that link</pre>
 </div>
 <div created="20210213140804302" modified="20210213140826004" parent="A quick tour/20210213140738170" stream-type="default" title="A quick tour/20210213140804289">
@@ -17015,6 +17053,30 @@ $:/core/images/storyview-$(storyview)$
 </div>
 <div created="20210213144313886" modified="20210213144324833" parent="A quick tour" stream-type="default" title="A quick tour/20210213144313882">
 <pre>!!! Happy exploring</pre>
+</div>
+<div created="20210213150644968" modified="20210213150736620" parent="A quick tour/20210213140057029" stream-list="[[A quick tour/20210213150726459]]" stream-type="default" title="A quick tour/20210213150644963">
+<pre>!!!! Other ways to make a page</pre>
+</div>
+<div created="20210213150655694" modified="20210213150736620" parent="A quick tour/20210213150726459" stream-type="default" title="A quick tour/20210213150655684">
+<pre>You could also make a page by &lt;kbd&gt;ctrl-N&lt;/kbd&gt;</pre>
+</div>
+<div created="20210213150726466" modified="20210213150751092" parent="A quick tour/20210213150644963" stream-list="[[A quick tour/20210213150738101]] [[A quick tour/20210213150655684]]" stream-type="default" title="A quick tour/20210213150726459">
+<pre>Two other ways to make a page:</pre>
+</div>
+<div created="20210213150738109" modified="20210213150957896" parent="A quick tour/20210213150726459" stream-list="[[A quick tour/20210213150750739]] [[A quick tour/20210213150927362]]" stream-type="default" title="A quick tour/20210213150738101">
+<pre>From the search bar:</pre>
+</div>
+<div created="20210213150750745" modified="20210213150931676" parent="A quick tour/20210213150738101" stream-list="[[A quick tour/20210213150852355]]" stream-type="default" title="A quick tour/20210213150750739">
+<pre>You can get to the search bar by &lt;kbd&gt;ctrl-shift-F&lt;/kbd&gt; or &lt;kbd&gt;alt-U&lt;/kbd&gt; when the sidebar is open</pre>
+</div>
+<div created="20210213150852363" modified="20210213150924052" parent="A quick tour/20210213150750739" stream-type="default" title="A quick tour/20210213150852355">
+<pre>//If the side bar is closed press &lt;kbd&gt;alt-shift-S&lt;/kbd&gt;//</pre>
+</div>
+<div created="20210213150927369" modified="20210213151038794" parent="A quick tour/20210213150738101" stream-list="[[A quick tour/20210213150957533]]" stream-type="default" title="A quick tour/20210213150927362">
+<pre>Type some text and &lt;kbd&gt;crtl-space&lt;/kbd&gt; or the &lt;kbd&gt;+&lt;/kbd&gt; button to create the page</pre>
+</div>
+<div created="20210213150957540" modified="20210213151000824" parent="A quick tour/20210213150927362" stream-type="default" title="A quick tour/20210213150957533">
+<pre>Thanks JD</pre>
 </div>
 <div bag="default" caption="ALL DAILY NOTES" created="20201029133713034" modified="20201227094347800" revision="0" stream-list="" stream-type="default" tags="rr-essentials hide rr-shortcuts rr-TW5" title="ALL DAILY NOTES" type="text/vnd.tiddlywiki">
 <pre>&lt;$count filter=&quot;[tag[DailyNote]]&quot;/&gt; Entries:&lt;br&gt;
@@ -18030,6 +18092,9 @@ Right click on a bullet to access context menu
 </div>
 <div created="20201031062455223" modified="20201202082145325" parent="Easily created To Do lists/20201031062738692" stream-list="Welcome/20201031062303933" stream-type="default" title="Welcome/20201031062455222">
 <pre>Additionally the task will appear in the footer of any other page (on your wiki) you link to.</pre>
+</div>
+<div created="20210213150501856" modified="20210213150501856" title="what">
+<pre></pre>
 </div>
 
 
