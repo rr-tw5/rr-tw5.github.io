@@ -397,6 +397,8 @@ Error message and password prompt
 
 <li>$:/rr/config/TodoFilter</li>
 
+<li>$:/rr/config/UnlinkedReferencesFilter</li>
+
 <li>$:/rr/EditorToolbar/quotation</li>
 
 <li>$:/rr/editorToolbar/todoSnippet</li>
@@ -11992,13 +11994,7 @@ fill:$(foregroundColor)$;
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/kixam/datepicker/icon]]
-# [[$:/plugins/kixam/datepicker/license]]
-# [[$:/plugins/kixam/datepicker/pikaday.css]]
-# [[$:/plugins/kixam/datepicker/pikaday.js]]
-# [[$:/plugins/kixam/datepicker/readme]]
-# [[$:/plugins/kixam/datepicker/usage]]
-# [[$:/plugins/kixam/datepicker/widget.datepicker.js]]</pre>
+# [[$:/palettes/rr/NightMode]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -12006,10 +12002,10 @@ fill:$(foregroundColor)$;
 <div created="20210213124805015" modified="20210213124805479" title="$:/language/DefaultNewTiddlerTitle">
 <pre>New Page</pre>
 </div>
-<div created="20201201192441925" modified="20210213144430049" title="$:/palette">
-<pre>$:/palettes/rr/DayMode</pre>
+<div created="20201201192441925" modified="20210214155437564" title="$:/palette">
+<pre>$:/palettes/rr/NightMode</pre>
 </div>
-<div bag="default" created="20201118085328588" description="Bright and Clear" modified="20210213130608184" name="RR-TW5 Day Mode" revision="0" tags="$:/tags/Palette rr-UI rr-TW5" title="$:/palettes/rr/DayMode" type="application/x-tiddler-dictionary">
+<div bag="default" created="20201118085328588" description="Bright and Clear" modified="20210214130107686" name="RR-TW5 Day Mode" revision="0" tags="$:/tags/Palette rr-UI rr-TW5" title="$:/palettes/rr/DayMode" type="application/x-tiddler-dictionary">
 <pre>alert-background: #ffe476
 alert-border: #b99e2f
 alert-highlight: #881122
@@ -12047,7 +12043,7 @@ external-link-foreground-hover: inherit
 external-link-foreground-visited: #0000aa
 external-link-foreground: #0000ee
 foreground: #333333
-menubar-foreground: &lt;&lt;colour sidebar-controls-foreground&gt;&gt;
+menubar-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
 menubar-background: transparent
 message-background: #ecf2ff
 message-border: #cfd6e6
@@ -12064,7 +12060,7 @@ notification-border: #999999
 page-background: #f4f4f4
 pre-background: #f5f5f5
 pre-border: #cccccc
-primary: #5778d8
+primary: #c80608
 select-tag-background: 
 select-tag-foreground: 
 sidebar-button-foreground: &lt;&lt;colour foreground&gt;&gt;
@@ -12082,7 +12078,7 @@ sidebar-tab-divider: #e4e4e4
 sidebar-tab-foreground-selected: 
 sidebar-tab-foreground: &lt;&lt;colour tab-foreground&gt;&gt;
 sidebar-tiddler-link-foreground-hover: #444444
-sidebar-tiddler-link-foreground: #999999
+sidebar-tiddler-link-foreground: &lt;&lt;colour primary&gt;&gt;
 site-title-foreground: &lt;&lt;colour tiddler-title-foreground&gt;&gt;
 static-alert-foreground: #aaaaaa
 tab-background-selected: #ffffff
@@ -12143,7 +12139,7 @@ wikilist-droplink-dragover: rgba(255,192,192,0.5)
 wikilist-button-background: #acacac
 wikilist-button-foreground: #000</pre>
 </div>
-<div bag="default" created="20201115171647195" description="Easy on the eyes" modified="20201229070308786" name="RR-TW5 Night Mode" revision="0" tags="$:/tags/Palette rr-UI rr-TW5" title="$:/palettes/rr/NightMode" type="application/x-tiddler-dictionary">
+<div bag="default" created="20201115171647195" description="Easy on the eyes" modified="20210214132400681" name="RR-TW5 Night Mode" revision="0" tags="$:/tags/Palette rr-UI rr-TW5" title="$:/palettes/rr/NightMode" type="application/x-tiddler-dictionary">
 <pre>alert-background: &lt;&lt;colour background&gt;&gt;
 alert-border: &lt;&lt;colour very-muted-foreground&gt;&gt;
 alert-highlight: &lt;&lt;colour very-muted-foreground&gt;&gt;
@@ -12171,7 +12167,7 @@ external-link-background-visited: transparent
 external-link-background: transparent
 external-link-foreground-hover: 
 external-link-foreground-visited: #7c318c
-external-link-foreground: #9e3eb3
+external-link-foreground: #008cb4
 foreground: rgba(255, 255, 255, 0.7)
 menubar-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
 menubar-background: transparent
@@ -12190,7 +12186,7 @@ notification-border: &lt;&lt;colour dropdown-background&gt;&gt;
 page-background: &lt;&lt;colour background&gt;&gt;
 pre-background: &lt;&lt;colour background&gt;&gt;
 pre-border: transparent
-primary: #BF616A
+primary: #bf2c2c
 select-tag-background: &lt;&lt;colour background&gt;&gt;
 select-tag-foreground: &lt;&lt;colour foreground&gt;&gt;
 sidebar-button-foreground: &lt;&lt;colour foreground&gt;&gt;
@@ -12208,7 +12204,7 @@ sidebar-tab-divider: &lt;&lt;colour table-border&gt;&gt;
 sidebar-tab-foreground-selected: #d95000
 sidebar-tab-foreground: #7a7a7a
 sidebar-tiddler-link-foreground-hover: rgba(255, 255, 255, 0.7)
-sidebar-tiddler-link-foreground: #943326
+sidebar-tiddler-link-foreground: &lt;&lt;colour primary&gt;&gt;
 site-title-foreground: rgba(255, 255, 255, 0.7)
 static-alert-foreground: #aaaaaa
 tab-background-selected: &lt;&lt;colour background&gt;&gt;
@@ -12239,7 +12235,7 @@ tiddler-info-tab-background: &lt;&lt;colour tiddler-editor-fields-odd&gt;&gt;
 tiddler-link-background: &lt;&lt;colour background&gt;&gt;
 tiddler-link-foreground: &lt;&lt;colour primary&gt;&gt;
 tiddler-subtitle-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
-tiddler-title-foreground: &lt;&lt;colour primary&gt;&gt;
+tiddler-title-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
 toolbar-new-button: 
 toolbar-options-button: 
 toolbar-save-button: 
@@ -15473,6 +15469,9 @@ nav.tc-menubar .tc-more-sidebar &gt; .tc-tab-set &gt; .tc-tab-buttons &gt; butto
 <div bag="default" created="20201124191801075" description="Filter that determines which tiddlers get TODOs in their footer" modified="20201127122425459" revision="0" tags="rr-todo rr-UX rr-TW5" title="$:/rr/config/TodoFilter" type="text/vnd.tiddlywiki">
 <pre>[!is[system]!tag[hide]parent[]]</pre>
 </div>
+<div bag="default" created="20201124113718618" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210214155313247" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/UnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
+<pre>[!is[system]!tag[no-refs]parent[]]</pre>
+</div>
 <div bag="default" caption="{{$:/language/Buttons/Quote/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20201123173431813" description="{{$:/rr/language/Buttons/Quotation/Hint}}" icon="$:/core/images/quote" modified="20210212093029113" revision="2" shortcuts="((quotation))" tags="$:/tags/EditorToolbar rr-UX rr-TW5" title="$:/rr/EditorToolbar/quotation" type="text/vnd.tiddlywiki">
 <pre>&lt;$action-sendmessage
 	$message=&quot;tm-edit-text-operation&quot;
@@ -16226,12 +16225,12 @@ $:/state/folded/$(currentTiddler)$
 
 &lt;/$wikify&gt;</pre>
 </div>
-<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210214053743856" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210214155225097" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
 <pre>\define PartialMatchPattern()
 $(currentTiddler)$(?i)
 \end
 
-&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/UninkedReferencesFilter}]&quot;&quot;&quot;&gt;
+&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/UnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
 &lt;$set name=pattern value=&lt;&lt;PartialMatchPattern&gt;&gt;&gt;
 &lt;$wikify text=&quot;&quot;&quot;&lt;$count filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]]&quot;/&gt;&quot;&quot;&quot; name=num&gt;
 &lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
@@ -16528,7 +16527,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20201103180600125" modified="20201103180600125" title="$:/snippets/download-wiki-button 1">
 <pre></pre>
 </div>
-<div created="20210212195452718" modified="20210213142912075" title="$:/state/advancedsearch/currentTab">
+<div created="20210212195452718" modified="20210214154358715" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210213150536401" modified="20210213152454203" title="$:/state/dropdown/keyboardshortcut/sidebar-search-286565879">
@@ -16555,7 +16554,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210213143627858" modified="20210213143633743" title="$:/state/sq/streams/current-edit-tiddler--1210650108">
 <pre>2020/10/22/20201022131052161</pre>
 </div>
-<div created="20210212195452718" modified="20210213142912075" title="$:/state/tab--1498284803">
+<div created="20210212195452718" modified="20210214154358720" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210213124827375" modified="20210213125844514" title="$:/state/tab--1963855381">
@@ -16594,7 +16593,7 @@ $:/core/images/storyview-$(storyview)$
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210213152437437" list="[[DAILY NOTES]]" modified="20210214054004776" title="$:/StoryList">
+<div created="20210214133011540" list="[[DAILY NOTES]]" modified="20210214155251018" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20201231174724669" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/sidebar $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar" modified="20210212140949203" revision="8" tags="rr-TW5 rr-UI-mod" title="$:/tags/MenuBar" type="text/vnd.tiddlywiki">
@@ -16849,7 +16848,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20201026122336355" modified="20201026122926395" parent="2020/10/26/20201026122846202" stream-list="2020/10/26/20201026122726761" stream-type="default" title="2020/10/26/20201026122336354">
 <pre>[[Martin Luther King Jr]]</pre>
 </div>
-<div created="20201026122348802" modified="20201026122923734" parent="2020/10/26/20201026122846202" stream-type="default" title="2020/10/26/20201026122348801">
+<div created="20201026122348802" modified="20210214155236012" parent="2020/10/26/20201026122846202" stream-type="default" title="2020/10/26/20201026122348801">
 <pre>[[MLK]] is for America what [[MG]] is for India</pre>
 </div>
 <div created="20201026122726761" modified="20201026122812847" parent="2020/10/26/20201026122336354" stream-list="2020/10/26/20201026122753047 2020/10/26/20201026122812845" stream-type="default" title="2020/10/26/20201026122726761">
@@ -16875,7 +16874,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20201026125026746" modified="20201026125057088" parent="2020/10/26/20201026122812845/20201026124815004" stream-list="" stream-type="default" title="2020/10/26/20201026122812845/20201026125026745">
 <pre>Veteran African-American civil rights activist Bayard Rustin was King's first regular advisor on nonviolence. King was also advised by the white activists Harris Wofford and Glenn Smiley. Rustin and Smiley came from the Christian pacifist tradition, and Wofford and Rustin both studied [[Mahatma Gandhi]]'s teachings. Rustin had applied nonviolence with the Journey of Reconciliation campaign in the 1940s, and Wofford had been promoting Gandhism to Southern blacks since the early 1950s.</pre>
 </div>
-<div created="20201026122846203" modified="20201202083052749" parent="November 30th, 2020 (Monday)" stream-list="2020/10/26/20201026112941684 2020/10/26/20201026113024501 2020/10/26/20201026113635918 2020/10/26/20201026122336354 2020/10/26/20201026122348801" stream-type="default" title="2020/10/26/20201026122846202">
+<div created="20201026122846203" modified="20210214155234634" parent="November 30th, 2020 (Monday)" stream-list="2020/10/26/20201026112941684 2020/10/26/20201026113024501 2020/10/26/20201026113635918 2020/10/26/20201026122336354 2020/10/26/20201026122348801" stream-type="default" title="2020/10/26/20201026122846202">
 <pre>Some example texts for showing up in [[Queries, transclusions, and other macros]]</pre>
 </div>
 <div bag="default" created="20201023184942177" modified="20210213130836295" revision="0" stream-list="[[A clean interface/20201108182944616]] [[A clean interface/20201108183410637]] [[A clean interface/09.39-25123]] [[A clean interface/20210213130757639]] [[A clean interface/09.38-5166]]" stream-type="default" title="A clean interface" type="text/vnd.tiddlywiki">
