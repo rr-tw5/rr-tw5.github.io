@@ -1235,6 +1235,8 @@ Error message and password prompt
 
 <li>query</li>
 
+<li>RadioWidget Example</li>
+
 <li>rr-core-page</li>
 
 <li>rr-essentials</li>
@@ -16173,7 +16175,7 @@ $:/state/folded/$(currentTiddler)$
 .tc-tiddler-view-frame .tc-tiddler-controls:hover svg.tc-image-close-button { opacity: 1; }
 </pre>
 </div>
-<div bag="default" created="20201124112448219" modified="20210120083906582" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124112448219" modified="20210214053750489" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/LinkedReferencesFilter}]&quot;&quot;&quot;&gt;
 &lt;$wikify text=&quot;&quot;&quot;&lt;$count filter=&quot;[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]] -[is[current]]&quot;/&gt;&quot;&quot;&quot; name=num&gt;
 &lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
@@ -16199,15 +16201,15 @@ $:/state/folded/$(currentTiddler)$
 {{!!text||$:/core/ui/ViewTemplate/body}}
 {{||$:/plugins/sq/streams/nodes-list-template}}
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/RRLinkRefPathFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;details&lt;/$button&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/right-arrow}} details&lt;/$button&gt;&lt;/h5&gt;
 &lt;/$reveal&gt;
 &lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/RRLinkRefPathFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;details&lt;/$button&gt;&lt;br&gt; ''name'': &lt;$link&gt;{{!!title}}&lt;/$link&gt; &lt;$button message=&quot;tm-edit-tiddler&quot; tooltip={{$:/language/Buttons/Edit/Hint}} aria-label={{$:/language/Buttons/Edit/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt; 
+&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/down-arrow}} details&lt;/$button&gt;&lt;br&gt; ''name'': &lt;$link&gt;{{!!title}}&lt;/$link&gt; &lt;$button message=&quot;tm-edit-tiddler&quot; tooltip={{$:/language/Buttons/Edit/Hint}} aria-label={{$:/language/Buttons/Edit/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt; 
 {{$:/core/images/edit-button}}
 &lt;/$button&gt;&lt;br&gt;&lt;small&gt;''path'': {{||$:/plugins/sq/streams/breadcrumbs-view-template}}&lt;/small&gt;&lt;/h5&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div bag="default" created="20201124191623055" description="The TODO code" modified="20201130120404830" revision="0" tags="hide rr-todo rr-UX rr-TW5" title="$:/rr/templateCode/Todo" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124191623055" description="The TODO code" modified="20210214054022813" revision="0" tags="hide rr-todo rr-UX rr-TW5" title="$:/rr/templateCode/Todo" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/TodoFilter}]&quot;&quot;&quot;&gt;
 &lt;$list filter=&quot;[[TODO]backlinks[]] +[!tag[hide]!tag[done]]&quot; variable=&quot;backlink&quot;&gt;
 &lt;$list filter=&quot;[all[current]backlinks[]allafter:include&lt;backlink&gt;first[]]&quot; variable=&quot;_NULL&quot;&gt;
@@ -16224,7 +16226,7 @@ $:/state/folded/$(currentTiddler)$
 
 &lt;/$wikify&gt;</pre>
 </div>
-<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20201201071233725" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210214053743856" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
 <pre>\define PartialMatchPattern()
 $(currentTiddler)$(?i)
 \end
@@ -16258,10 +16260,10 @@ Unlinked References&lt;/h3&gt;&lt;/$reveal&gt;
 &lt;/$button&gt;&lt;br&gt;
 {{||$:/plugins/sq/streams/nodes-list-template}}
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/RRNoLinkRefPathFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRNoLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;details&lt;/$button&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRNoLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/right-arrow}} details&lt;/$button&gt;&lt;/h5&gt;
 &lt;/$reveal&gt;
 &lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/RRNoLinkRefPathFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRNoLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;details&lt;/$button&gt;&lt;br&gt; ''name'': {{!!title}}&lt;br&gt;&lt;small&gt;''path'':  {{||$:/rr/streams/breadcrumbs-titles-view-template}}&lt;/small&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRNoLinkRefPathFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/down-arrow}} details&lt;/$button&gt;&lt;br&gt; ''name'': {{!!title}}&lt;br&gt;&lt;small&gt;''path'':  {{||$:/rr/streams/breadcrumbs-titles-view-template}}&lt;/small&gt;&lt;/h5&gt;
 &lt;/$reveal&gt;</pre>
 </div>
 <div bag="default" caption="Toggle story view" created="20210120090703965" description="Show single or multiple pages at a time" modified="20210213125101145" revision="0" tags="$:/tags/PageControls rr-TW5 rr-UI" title="$:/rr/ui/Buttons/storyview-toggle" type="text/vnd.tiddlywiki">
@@ -16592,7 +16594,7 @@ $:/core/images/storyview-$(storyview)$
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210213152437437" list="$:/ControlPanel $:/plugins/tiddlywiki/menubar [[DAILY NOTES]]" modified="20210213170236750" title="$:/StoryList">
+<div created="20210213152437437" list="[[DAILY NOTES]]" modified="20210214054004776" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20201231174724669" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/sidebar $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar" modified="20210212140949203" revision="8" tags="rr-TW5 rr-UI-mod" title="$:/tags/MenuBar" type="text/vnd.tiddlywiki">
@@ -17830,6 +17832,9 @@ With descriptions of the modifications made to other people's code
 <pre>Here's an example in [[Mahatma Gandhi]].</pre>
 </div>
 <div bag="default" caption="QUERIES" created="20201025151442437" modified="20201227094431619" revision="0" stream-list="query/20201103094552469 query/08.00-12421" stream-type="default" tags="rr-shortcuts rr-TW5" title="query" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div created="20210214052601590" modified="20210214052601590" title="RadioWidget Example">
 <pre></pre>
 </div>
 <div bag="default" caption="Core Sidebar Pages " created="20201127113342427" modified="20201227094433388" revision="0" tags="rr-tags rr-TW5" title="rr-core-page" type="text/vnd.tiddlywiki">
