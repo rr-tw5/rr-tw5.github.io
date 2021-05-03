@@ -12014,7 +12014,8 @@ fill:$(foregroundColor)$;
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/snowgoon88/edit-comptext]]</pre>
+# [[$:/rr/templateCode/UnlinkedReferences]]
+# [[$:/rr/templateCode/LinkedReferences]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -15545,10 +15546,9 @@ $:/state/folded/$(currentTiddler)$
 	margin-bottom: 0em;
 }</pre>
 </div>
-<div bag="default" created="20201124112448219" modified="20210430125439581" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124112448219" modified="20210503162317351" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/LinkedReferencesFilter}]&quot;&quot;&quot;&gt;
-&lt;$wikify text=&quot;&quot;&quot;&lt;$count filter=&quot;[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]] -[is[current]]&quot;/&gt;&quot;&quot;&quot; name=num&gt;
-&lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
+&lt;$vars num={{{[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]+[count[]]}}}&gt;&lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
 
 &lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/LinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;hide&quot;&gt;
 &lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/LinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$button&gt; &lt;&lt;num&gt;&gt; Linked References&lt;/h3&gt;
@@ -15556,7 +15556,7 @@ $:/state/folded/$(currentTiddler)$
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/LinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;hide&quot;&gt;
 &lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/LinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt; &lt;&lt;num&gt;&gt; Linked References&lt;/h3&gt;   
-&lt;$list filter=&quot;[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]!sort[created]] -[is[current]]&quot; variable=&quot;linkRef&quot; &gt;
+&lt;$list filter=&quot;[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]!sort[created]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]&quot; variable=&quot;linkRef&quot; &gt;
 &lt;$tiddler tiddler=&lt;&lt;linkRef&gt;&gt;&gt;
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/RRLinkRefFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
 &lt;h4&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/RRLinkRefFoldData&quot; setIndex=&lt;&lt;linkRef&gt;&gt; setTo=&quot;show&quot;&gt;
@@ -15596,14 +15596,14 @@ $:/state/folded/$(currentTiddler)$
 
 &lt;/$wikify&gt;</pre>
 </div>
-<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210214155225097" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210503163007950" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
 <pre>\define PartialMatchPattern()
 $(currentTiddler)$(?i)
 \end
 
 &lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/UnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
 &lt;$set name=pattern value=&lt;&lt;PartialMatchPattern&gt;&gt;&gt;
-&lt;$wikify text=&quot;&quot;&quot;&lt;$count filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]]&quot;/&gt;&quot;&quot;&quot; name=num&gt;
+&lt;$vars num={{{[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;] +[count[]]}}}&gt;
 &lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/UnlinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
@@ -15613,7 +15613,7 @@ Unlinked References&lt;/h3&gt;&lt;/$reveal&gt;
 &lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/UnlinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
 &lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/UnlinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt;  &lt;&lt;num&gt;&gt; Unlinked References&lt;/h3&gt;
 
-&lt;$list filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]] +[!sort[created]]&quot; variable=&quot;linkRef&quot; &gt;
+&lt;$list filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]] +[!sort[created]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]&quot; variable=&quot;linkRef&quot; &gt;
 &lt;$tiddler tiddler=&lt;&lt;linkRef&gt;&gt;&gt;
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/RRNoLinkRefFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
@@ -15975,12 +15975,12 @@ $:/core/images/storyview-$(storyview)$
 <pre>no</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210502181950921" list="[[Download This Wiki as index.html]] $:/ControlPanel $:/plugins/snowgoon88/edit-comptext [[DAILY NOTES]]" modified="20210502182026127" title="$:/StoryList">
+<div created="20210503163042089" list="[[Download This Wiki as index.html]] [[DAILY NOTES]]" modified="20210503163146693" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20201231174724669" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/sidebar $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar" modified="20210212200236476" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/tags/MenuBar" type="text/vnd.tiddlywiki">
