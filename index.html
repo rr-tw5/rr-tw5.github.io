@@ -377,6 +377,10 @@ Error message and password prompt
 
 <li>$:/rr/config/NewJournal/SortDate</li>
 
+<li>$:/rr/config/RemoveUnlinkedReferencesFilter</li>
+
+<li>$:/rr/config/ShowUnlinkedReferencesFilter</li>
+
 <li>$:/rr/config/TodoFilter</li>
 
 <li>$:/rr/config/UnlinkedReferencesFilter</li>
@@ -508,6 +512,10 @@ Error message and password prompt
 <li>$:/rr/ux/Actions/when-daily-note-exists</li>
 
 <li>$:/rr/ViewTemplate/LinkedReferences</li>
+
+<li>$:/rr/ViewTemplate/RemoveUnlinkedReferences</li>
+
+<li>$:/rr/ViewTemplate/ShowUnlinkedReferences</li>
 
 <li>$:/rr/ViewTemplate/Todo</li>
 
@@ -12030,7 +12038,7 @@ fill:$(foregroundColor)$;
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/rr/templateCode/UnlinkedReferences]]</pre>
+# [[$:/rr/config/UnlinkedReferencesFilter]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -14685,11 +14693,17 @@ nav.tc-menubar .tc-more-sidebar &gt; .tc-tab-set &gt; .tc-tab-buttons &gt; butto
 <div bag="default" created="20201111093654865" modified="20201227161626818" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/NewJournal/SortDate" type="text/vnd.tiddlywiki">
 <pre>YYYY0MM0DD</pre>
 </div>
+<div bag="default" created="20210505093907248" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210505095036835" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/RemoveUnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
+<pre>[!is[system]!tag[no-refs]!tag[DailyNote]tag[show-unlinked]parent[]]</pre>
+</div>
+<div bag="default" created="20210505092331011" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210505093715916" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/ShowUnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
+<pre>[!is[system]!tag[no-refs]!tag[DailyNote]!tag[show-unlinked]parent[]]</pre>
+</div>
 <div bag="default" created="20201124191801075" description="Filter that determines which tiddlers get TODOs in their footer" modified="20210419182438316" revision="0" tags="rr-todo rr-UX rr-TW5" title="$:/rr/config/TodoFilter" type="text/vnd.tiddlywiki">
 <pre>[!is[system]!tag[hide]parent[]]</pre>
 </div>
-<div bag="default" created="20201124113718618" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210214155313247" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/UnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
-<pre>[!is[system]!tag[no-refs]parent[]]</pre>
+<div bag="default" created="20201124113718618" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210505083126922" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/UnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
+<pre>[!is[system]!tag[no-refs]!tag[DailyNote]tag[show-unlinked]parent[]]</pre>
 </div>
 <div bag="default" caption="{{$:/language/Buttons/Quote/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20201123173431813" description="{{$:/rr/language/Buttons/Quotation/Hint}}" icon="$:/core/images/quote" modified="20210212093029113" revision="0" shortcuts="((quotation))" tags="$:/tags/EditorToolbar rr-UX rr-TW5" title="$:/rr/EditorToolbar/quotation" type="text/vnd.tiddlywiki">
 <pre>&lt;$action-sendmessage
@@ -15572,16 +15586,17 @@ $:/state/folded/$(currentTiddler)$
 	margin-bottom: 0em;
 }</pre>
 </div>
-<div bag="default" created="20201124112448219" modified="20210503162317351" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124112448219" modified="20210505093403922" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/LinkedReferencesFilter}]&quot;&quot;&quot;&gt;
-&lt;$vars num={{{[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]+[count[]]}}}&gt;&lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
+&lt;$vars num={{{[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]+[count[]]}}}&gt;
+&lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
 
 &lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/LinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;hide&quot;&gt;
-&lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/LinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$button&gt; &lt;&lt;num&gt;&gt; Linked References&lt;/h3&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; setTitle=&quot;$:/temp/LinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;&lt;h3&gt;&lt;smallish&gt;{{$:/core/images/right-arrow}}&lt;/smallish&gt; &lt;&lt;num&gt;&gt; Linked References&lt;/h3&gt;&lt;/$button&gt;
 &lt;/$reveal&gt;
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/LinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;hide&quot;&gt;
-&lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/LinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt; &lt;&lt;num&gt;&gt; Linked References&lt;/h3&gt;   
+&lt;$button class=&quot;tc-btn-invisible&quot; setTitle=&quot;$:/temp/LinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;&lt;h3&gt;&lt;smallish&gt;{{$:/core/images/down-arrow}}&lt;/smallish&gt; &lt;&lt;num&gt;&gt; Linked References&lt;/h3&gt;&lt;/$button&gt;   
 &lt;$list filter=&quot;[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]!sort[created]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]&quot; variable=&quot;linkRef&quot; &gt;
 &lt;$tiddler tiddler=&lt;&lt;linkRef&gt;&gt;&gt;
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/RRLinkRefFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
@@ -15622,7 +15637,7 @@ $:/state/folded/$(currentTiddler)$
 
 &lt;/$wikify&gt;</pre>
 </div>
-<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210504175541568" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210505095349288" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
 <pre>\define PartialMatchPattern()
 $(currentTiddler)$(?i)
 \end
@@ -15633,11 +15648,10 @@ $(currentTiddler)$(?i)
 &lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/UnlinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/UnlinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$button&gt; &lt;&lt;num&gt;&gt;
-Unlinked References&lt;/h3&gt;&lt;/$reveal&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; setTitle=&quot;$:/temp/UnlinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;&lt;h3&gt;&lt;smallish&gt;{{$:/core/images/right-arrow}}&lt;/smallish&gt; &lt;&lt;num&gt;&gt; Unlinked References&lt;/h3&gt;&lt;/$button&gt;&lt;/$reveal&gt;
 
 &lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/UnlinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/UnlinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt;  &lt;&lt;num&gt;&gt; Unlinked References&lt;/h3&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; setTitle=&quot;$:/temp/UnlinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;&lt;h3&gt;&lt;smallish&gt;{{$:/core/images/down-arrow}}&lt;/smallish&gt; &lt;&lt;num&gt;&gt; Unlinked References&lt;/h3&gt;&lt;/$button&gt;
 
 &lt;$list filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]] +[!sort[created]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]&quot; variable=&quot;linkRef&quot; &gt;
 &lt;$tiddler tiddler=&lt;&lt;linkRef&gt;&gt;&gt;
@@ -15850,6 +15864,20 @@ $:/core/images/storyview-$(storyview)$
 {{||$:/rr/templateCode/LinkedReferences}}
 &lt;/$list&gt;</pre>
 </div>
+<div bag="default" caption="Remove Unlinked References" created="20210505094842379" list-after="$:/rr/ViewTemplate/UnlinkedReferences" modified="20210505095059830" revision="0" tags="$:/tags/ViewTemplate rr-retrieve rr-UX rr-TW5" title="$:/rr/ViewTemplate/RemoveUnlinkedReferences" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/RemoveUnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
+   &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+   &lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;-show-unlinked&quot;/&gt;
+&lt;h3&gt; - Remove Unlinked References&lt;/h3&gt;&lt;/$button&gt;
+&lt;/$list&gt;</pre>
+</div>
+<div bag="default" caption="Show Unlinked References" created="20210505090715960" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210505094939414" revision="0" tags="$:/tags/ViewTemplate rr-retrieve rr-UX rr-TW5" title="$:/rr/ViewTemplate/ShowUnlinkedReferences" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/ShowUnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
+   &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+   &lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;show-unlinked&quot;/&gt;
+&lt;h3&gt; + Find Unlinked References&lt;/h3&gt;&lt;/$button&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div bag="default" caption="TODOs" created="20201022113249489" description="The TODO View Template" list-before="$:/rr/ViewTemplate/LinkedReferences" modified="20210419182438278" revision="0" tags="$:/tags/ViewTemplate hide rr-retrieve rr-todo rr-UX rr-TW5" title="$:/rr/ViewTemplate/Todo" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[&lt;folded-state&gt;get[text]!is[blank]else[show]!match[hide]]&quot;&quot;&quot; variable=&quot;_NULL&quot;&gt;
 {{||$:/rr/templateCode/Todo}}
@@ -16009,7 +16037,7 @@ $:/core/images/storyview-$(storyview)$
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210504175334689" list="[[Download This Wiki as index.html]] [[DAILY NOTES]]" modified="20210504180214873" title="$:/StoryList">
+<div created="20210505095148344" list="[[Download This Wiki as index.html]] [[DAILY NOTES]] Installation" modified="20210505095742159" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20201231174724669" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/sidebar $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar" modified="20210212200236476" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/tags/MenuBar" type="text/vnd.tiddlywiki">
@@ -16294,7 +16322,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20201026122348802" modified="20210504112342076" parent="2020/10/26/20201026122846202" stream-type="default" title="2020/10/26/20201026122348801">
 <pre>[[MLK]] is for America what [[MG]] is for India</pre>
 </div>
-<div created="20201026122726761" modified="20201026122812847" parent="2020/10/26/20201026122336354" stream-list="2020/10/26/20201026122753047 2020/10/26/20201026122812845" stream-type="default" title="2020/10/26/20201026122726761">
+<div created="20201026122726761" modified="20210505095724573" parent="2020/10/26/20201026122336354" stream-list="2020/10/26/20201026122753047 2020/10/26/20201026122812845" stream-type="default" title="2020/10/26/20201026122726761">
 <pre>From Wikipedia:</pre>
 </div>
 <div created="20201026122753048" modified="20201026122812848" parent="2020/10/26/20201026122726761" stream-list="" stream-type="default" title="2020/10/26/20201026122753047">
@@ -16801,7 +16829,7 @@ Copy stream to clipboard as HTML
 <div created="20201026113540690" modified="20201026113556726" tags="rr-examples" title="insect">
 <pre></pre>
 </div>
-<div created="20201108200008091" modified="20201108200335206" stream-list="Installation/20201108200122853 Installation/20201108200225876 Installation/20201108200245852" stream-type="default" title="Installation">
+<div created="20201108200008091" modified="20210505095713719" stream-list="Installation/20201108200122853 Installation/20201108200225876 Installation/20201108200245852" stream-type="default" tags="" title="Installation">
 <pre></pre>
 </div>
 <div created="20201108200122854" modified="20201108202404744" parent="Installation" stream-type="default" title="Installation/20201108200122853">
