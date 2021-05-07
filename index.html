@@ -12003,7 +12003,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20210213124753025" modified="20210213124757024" title="$:/DefaultTiddlers">
 <pre>[[DAILY NOTES]]</pre>
 </div>
-<div bag="default" created="20210210181701060" creator="akhater" list-before="$:/core/ui/SideBar/Open" modified="20210506161611594" modifier="akhater" revision="0" tags="rr-TW5 rr-UX" title="$:/drift/side-by-side" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210210181701060" creator="akhater" list-before="$:/core/ui/SideBar/Open" modified="20210507140756624" modifier="akhater" revision="0" tags="rr-TW5 rr-UX" title="$:/drift/side-by-side" type="text/vnd.tiddlywiki">
 <pre>\define drop-actions()
 &lt;$action-listops $tiddler=&quot;$:/rr/pinned&quot; $subfilter=&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
 &lt;$fieldmangler tiddler=&lt;&lt;actionTiddler&gt;&gt;&gt;
@@ -12011,7 +12011,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &lt;/$fieldmangler&gt;
 \end
 {{||$:/rr/side-by-side/ViewTemplate/top}}
-&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/rr/pinned]!has[draft.of]] +[sort[time-pinned]]&quot; variable=&quot;sideBarPin&quot; emptyMessage=&quot;''Nothing pinned yet''&lt;br&gt;Hold &lt;kbd&gt;shift&lt;/kbd&gt; while clicking a link / Tap {{$:/rr/side-by-side/images/side-by-side-right}} in the view toolbar&quot;&gt;
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/rr/pinned]!has[draft.of]] +[!sort[time-pinned]]&quot; variable=&quot;sideBarPin&quot; emptyMessage=&quot;''Nothing pinned yet''&lt;br&gt;Hold &lt;kbd&gt;shift&lt;/kbd&gt; while clicking a link / Tap {{$:/rr/side-by-side/images/side-by-side-right}} in the view toolbar&quot;&gt;
 &lt;$tiddler tiddler=&lt;&lt;sideBarPin&gt;&gt;&gt;
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/sideBarPinFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;hide&quot;&gt;
 {{||$:/drift/side-by-side/ViewTemplate}}
@@ -12112,10 +12112,8 @@ fill:$(foregroundColor)$;
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/rr/config/StopUnlinkedReferencesFilter]]
-# [[$:/rr/ViewTemplate/StopUnlinkedReferences]]
-# [[$:/rr/templateCode/UnlinkedReferences]]
-# [[$:/rr/templateCode/LinkedReferences]]</pre>
+# [[$:/drift/side-by-side]]
+# [[$:/rr/side-by-side/shift-click-link]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -15409,7 +15407,7 @@ Close Pinned SideBar  {{$:/core/images/close-button}}
    d=&quot;m 285.6875,0 71.8125,71.6875 -71.8125,71.7188 0,-35.4375 c -10e-4,0.001 -93.11575,-0.8691 -144.59375,54.25 C 165.27375,56.9228 285.6875,35.4063 285.6875,35.4063 L 285.6875,0 z M 192.96875,40.9688 C 177.29075,51.6228 163.60125,63.696 152.03125,77 L 36,77 l 0,298.9688 149.875,0 c 53.005,0 31.5,-68.5313 31.5,-68.5313 0,0 70.1875,22.7805 70.1875,-34.0625 l 0,-89.4687 c 29.286,-29.238 19.42325,-19.3575 36.03125,-35.9375 l 0,128.5312 c 0,55.295 -75.8005,135.5 -137.1875,135.5 L 0,412 0,40.9688 l 192.96875,0 z m 56.15625,141.6562 0,27.0313 -174.6875,0 0,-27.0313 174.6875,0 z m 0.0313,58.9063 0,27.0312 -174.71875,0 0,-27.0312 174.71875&quot;/&gt;
 &lt;/svg&gt;</pre>
 </div>
-<div bag="default" created="20201230073139775" creator="akhater" modified="20210504095610254" modifier="akhater" revision="0" tags="$:/tags/config/sq/shiftclick-link rr-UX rr-TW5" title="$:/rr/side-by-side/shift-click-link" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201230073139775" creator="akhater" modified="20210507140715030" modifier="akhater" revision="0" tags="$:/tags/config/sq/shiftclick-link rr-UX rr-TW5" title="$:/rr/side-by-side/shift-click-link" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
     &lt;$action-setfield $tiddler=&quot;$:/rr/pinned&quot; text=&quot;active&quot;/&gt;
     &lt;$action-listops $tiddler=&quot;$:/drift/side-by-side&quot; $tags=&quot;$:/tags/SideBar&quot; /&gt;
@@ -15424,7 +15422,7 @@ Close Pinned SideBar  {{$:/core/images/close-button}}
     &lt;$action-listops $tiddler=&quot;$:/rr/SideBar/Shortcuts&quot; $tags=&quot;$:/rr/menu -$:/tags/SideBar&quot;/&gt;
    &lt;$action-listops $tiddler=&quot;$:/core/ui/SideBar/Open&quot; $tags=&quot;$:/rr/menu -$:/tags/SideBar&quot;/&gt;
    &lt;$action-listops $tiddler=&lt;&lt;targetTiddler&gt;&gt; $tags=&quot;$:/rr/pinned&quot;/&gt;
-   &lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; time-pinned=&lt;&lt;now &quot;[UTC]YYYY0MM0DD0hh0mm0ss&quot;&gt;&gt;/&gt;</pre>
+   &lt;$action-setfield $tiddler=&lt;&lt;targetTiddler&gt;&gt; time-pinned=&lt;&lt;now &quot;[UTC]YYYY0MM0DD0hh0mm0ss&quot;&gt;&gt;/&gt;</pre>
 </div>
 <div bag="default" created="20201228171158378" modified="20201230134537464" revision="0" tags="rr-UX rr-TW5" title="$:/rr/side-by-side/sidebar-width-closed" type="text/vnd.tiddlywiki">
 <pre>330px</pre>
@@ -16114,7 +16112,7 @@ $:/core/images/storyview-$(storyview)$
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210506160154263" list="[[Download This Wiki as index.html]] [[DAILY NOTES]]" modified="20210506161616502" title="$:/StoryList">
+<div created="20210507140822598" list="[[Download This Wiki as index.html]] [[DAILY NOTES]]" modified="20210507140822598" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20201231174724669" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/sidebar $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar" modified="20210212200236476" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/tags/MenuBar" type="text/vnd.tiddlywiki">
