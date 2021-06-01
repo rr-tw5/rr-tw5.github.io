@@ -225,6 +225,8 @@ Error message and password prompt
 
 <li>$:/config/shortcuts/add-field</li>
 
+<li>$:/config/shortcuts/new-journal</li>
+
 <li>$:/config/shortcuts/quotation</li>
 
 <li>$:/config/shortcuts/revealPinnedSideBar</li>
@@ -244,6 +246,8 @@ Error message and password prompt
 <li>$:/config/shortcuts/streams-unindent</li>
 
 <li>$:/config/shortcuts/switch-palette</li>
+
+<li>$:/config/shortcuts/toggle-sidebar</li>
 
 <li>$:/config/SideBar/Visibility/$:/rr/SideBar/SHORTCUTS</li>
 
@@ -401,6 +405,8 @@ Error message and password prompt
 
 <li>$:/rr/macro/button/stream-as-article</li>
 
+<li>$:/rr/macro/button/stream-as-md</li>
+
 <li>$:/rr/macro/button/stream-as-ol</li>
 
 <li>$:/rr/macro/button/stream-as-p</li>
@@ -487,6 +493,8 @@ Error message and password prompt
 
 <li>$:/rr/templateCode/UnlinkedReferences</li>
 
+<li>$:/rr/TooManyUnlinkedRefsBanner</li>
+
 <li>$:/rr/ui/Buttons/storyview-toggle</li>
 
 <li>$:/rr/ui/KeyboardShortcuts/add-node</li>
@@ -512,10 +520,6 @@ Error message and password prompt
 <li>$:/rr/ux/Actions/when-daily-note-exists</li>
 
 <li>$:/rr/ViewTemplate/LinkedReferences</li>
-
-<li>$:/rr/ViewTemplate/ShowUnlinkedReferences</li>
-
-<li>$:/rr/ViewTemplate/StopUnlinkedReferences</li>
 
 <li>$:/rr/ViewTemplate/Todo</li>
 
@@ -1341,6 +1345,8 @@ Error message and password prompt
 
 <li>rr-todo</li>
 
+<li>rr-TW5</li>
+
 <li>RR-TW5 Files</li>
 
 <li>rr-UI</li>
@@ -1644,11 +1650,14 @@ Error message and password prompt
 <div created="20201202074535003" modified="20201202074543331" title="$:/config/shortcuts/add-field">
 <pre>Enter</pre>
 </div>
+<div bag="default" created="20210531102250013" modified="20210531102745549" revision="3" tags="rr-TW5 rr-UX-mod" title="$:/config/shortcuts/new-journal" type="text/vnd.tiddlywiki">
+<pre>cmd-J ctrl-shift-D</pre>
+</div>
 <div bag="default" created="20201128071547899" modified="20210212092952591" revision="0" tags="rr-UX rr-TW5" title="$:/config/shortcuts/quotation" type="text/vnd.tiddlywiki">
 <pre>ctrl-shift-Quote</pre>
 </div>
-<div bag="default" created="20210211160556917" modified="20210211160750242" revision="0" tags="rr-TW5 rr-UX" title="$:/config/shortcuts/revealPinnedSideBar" type="text/vnd.tiddlywiki">
-<pre>shift-alt-ctrl-S</pre>
+<div bag="default" created="20210211160556917" modified="20210531103031725" revision="1" tags="rr-TW5 rr-UX" title="$:/config/shortcuts/revealPinnedSideBar" type="text/vnd.tiddlywiki">
+<pre>shift-alt-ctrl-S cmd-Backslash</pre>
 </div>
 <div created="20210213150542159" modified="20210213150542159" title="$:/config/shortcuts/sidebar-search">
 <pre>ctrl-shift-F alt-U</pre>
@@ -1673,6 +1682,9 @@ Error message and password prompt
 </div>
 <div bag="default" created="20210102193926614" modified="20210103081147672" revision="0" tags="rr-TW5 rr-UX" title="$:/config/shortcuts/switch-palette" type="text/vnd.tiddlywiki">
 <pre>ctrl-alt-L</pre>
+</div>
+<div bag="default" created="20210531102951589" modified="20210531103127649" revision="2" tags="rr-TW5 rr-UX-mod" title="$:/config/shortcuts/toggle-sidebar" type="text/vnd.tiddlywiki">
+<pre>alt-shift-S cmd-Slash</pre>
 </div>
 <div created="20201103094143604" modified="20201103094144759" title="$:/config/SideBar/Visibility/$:/rr/SideBar/SHORTCUTS">
 <pre>show</pre>
@@ -11707,7 +11719,7 @@ $:/config/EditToolbarButtons/Visibility/$(listItem)$
 {{$:/rr/config/check-for-daily-notes}}
 &lt;/$navigator&gt;</pre>
 </div>
-<div bag="default" created="20210301175642480" key="((toggle-sidebar))" modified="20210504115845077" revision="0" tags="$:/tags/KeyboardShortcut rr-TW5 rr-UX-mod" title="$:/core/ui/KeyboardShortcuts/toggle-sidebar" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210301175642480" key="((toggle-sidebar))" modified="20210507053703332" revision="0" tags="$:/tags/KeyboardShortcut rr-TW5 rr-UX-mod" title="$:/core/ui/KeyboardShortcuts/toggle-sidebar" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;[[$:/state/sidebar]is[missing]] [{$:/state/sidebar}removeprefix[yes]]&quot; emptyMessage=&quot;&quot;&quot;
    &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;yes&quot;/&gt;
    &lt;$action-listops $tiddler=&quot;$:/themes/tiddlywiki/centralised/styles&quot; $tags=&quot;-$:/tags/Stylesheet&quot;/&gt;
@@ -11722,7 +11734,7 @@ $:/config/EditToolbarButtons/Visibility/$(listItem)$
 &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; default={{$:/config/DefaultMoreSidebarTab}} state=&quot;$:/state/tab/moresidebar&quot; class=&quot;tc-vertical tc-sidebar-tabs-more&quot; /&gt;
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" caption="RECENTLY ACCESSED" created="20201227154039983" modified="20210506161611597" revision="0" tags="$:/tags/SideBar rr-TW5 rr-UX-mod" title="$:/core/ui/SideBar/Open" type="text/vnd.tiddlywiki">
+<div bag="default" caption="RECENTLY ACCESSED" created="20201227154039983" modified="20210601065725132" revision="21" tags="$:/tags/SideBar rr-TW5 rr-UX-mod" title="$:/core/ui/SideBar/Open" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 \define lingo-base() $:/language/CloseAll/
 
@@ -11793,11 +11805,11 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/$set&gt;
 </pre>
 </div>
-<div bag="default" created="20210212193409528" modified="20210505183246377" revision="0" tags="rr-TW5 rr-UI-mod $:/tags/SideBarSegment" title="$:/core/ui/SideBarSegments/page-controls" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210212193409528" modified="20210430185258053" revision="0" tags="rr-TW5 rr-UI-mod $:/tags/SideBarSegment" title="$:/core/ui/SideBarSegments/page-controls" type="text/vnd.tiddlywiki">
 <pre>{{||$:/core/ui/PageTemplate/pagecontrols}}
 </pre>
 </div>
-<div bag="default" created="20210212194109583" modified="20210505183245243" revision="0" rr-mod="Added a + button to make new page from search" tags="rr-TW5 rr-UX-mod $:/tags/SideBarSegment" title="$:/core/ui/SideBarSegments/search" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210212194109583" modified="20210430185309593" revision="0" rr-mod="Added a + button to make new page from search" tags="rr-TW5 rr-UX-mod $:/tags/SideBarSegment" title="$:/core/ui/SideBarSegments/search" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 \define NewTidActions()
 &lt;$action-createtiddler $basetitle={{$:/temp/search}}/&gt;
@@ -11898,7 +11910,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20210212193638339" modified="20210505182942693" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/core/ui/SideBarSegments/site-subtitle" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210212193638339" modified="20210430185310769" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/core/ui/SideBarSegments/site-subtitle" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-site-subtitle&quot;&gt;
 
 &lt;$transclude tiddler=&quot;$:/SiteSubtitle&quot; mode=&quot;inline&quot;/&gt;
@@ -11906,7 +11918,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20210212193553575" modified="20210505182943821" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/core/ui/SideBarSegments/site-title" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210212193553575" modified="20210430185312991" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/core/ui/SideBarSegments/site-title" type="text/vnd.tiddlywiki">
 <pre>&lt;h1 class=&quot;tc-site-title&quot;&gt;
 
 &lt;$transclude tiddler=&quot;$:/SiteTitle&quot; mode=&quot;inline&quot;/&gt;
@@ -11914,19 +11926,18 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/h1&gt;
 </pre>
 </div>
-<div bag="default" created="20201028152609385" modified="20210212195434839" revision="0" tags="$:/tags/SideBarSegment rr-UI-mod rr-TW5" title="$:/core/ui/SideBarSegments/tabs" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201028152609385" modified="20210601071115968" revision="0" tags="$:/tags/SideBarSegment rr-UI-mod rr-TW5" title="$:/core/ui/SideBarSegments/tabs" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-sidebar-lists tc-sidebar-tabs&quot;&gt;
 
 &lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/SideBar]!has[draft.of]]&quot; variable=&quot;currentTiddler&quot;&gt;
 &lt;h3&gt;{{!!caption}}&lt;/h3&gt;
 &lt;$transclude/&gt;
-&lt;hr&gt;
 &lt;/$list&gt;
 
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210502060642602" modified="20210502172525120" tags="$:/tags/TopRightBar rr-TW5 rr-UI-mod" title="$:/core/ui/TopBar/menu">
+<div bag="default" created="20210502060642602" modified="20210504095617016" revision="0" tags="$:/tags/TopRightBar rr-TW5 rr-UI-mod" title="$:/core/ui/TopBar/menu" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;[[$:/state/sidebar]get[text]] +[else[yes]!match[no]]&quot; variable=&quot;ignore&quot;&gt;
 &lt;$button set=&quot;$:/state/sidebar&quot; setTo=&quot;no&quot; tooltip={{$:/language/Buttons/HideSideBar/Hint}} aria-label={{$:/language/Buttons/HideSideBar/Caption}} class=&quot;tc-btn-invisible tc-hide-sidebar-btn&quot;&gt;
    &lt;$action-listops $tiddler=&quot;$:/themes/tiddlywiki/centralised/styles&quot; $tags=&quot;$:/tags/Stylesheet&quot;/&gt;
@@ -12003,7 +12014,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20210213124753025" modified="20210213124757024" title="$:/DefaultTiddlers">
 <pre>[[DAILY NOTES]]</pre>
 </div>
-<div bag="default" created="20210210181701060" creator="akhater" list-before="$:/core/ui/SideBar/Open" modified="20210507140756624" modifier="akhater" revision="0" tags="rr-TW5 rr-UX" title="$:/drift/side-by-side" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210210181701060" creator="akhater" list-before="$:/core/ui/SideBar/Open" modified="20210601065725129" modifier="akhater" revision="21" tags="rr-TW5 rr-UX" title="$:/drift/side-by-side" type="text/vnd.tiddlywiki">
 <pre>\define drop-actions()
 &lt;$action-listops $tiddler=&quot;$:/rr/pinned&quot; $subfilter=&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
 &lt;$fieldmangler tiddler=&lt;&lt;actionTiddler&gt;&gt;&gt;
@@ -12025,7 +12036,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &amp;nbsp;
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" caption="{{$:/rr/side-by-side/images/side-by-side-right}} Pin in sidebar" created="20200525050747068" creator="akhater" description="Add the current page to an expanded sidebar" modified="20210422181447073" modifier="akhater" revision="0" tags="$:/tags/ViewToolbar rr-UX rr-TW5" title="$:/drift/side-by-side/Buttons/pin" type="text/vnd.tiddlywiki">
+<div bag="default" caption="{{$:/rr/side-by-side/images/side-by-side-right}} Pin in sidebar" created="20200525050747068" creator="akhater" description="Add the current page to an expanded sidebar" modified="20210507055134190" modifier="akhater" revision="0" tags="$:/tags/ViewToolbar rr-UX rr-TW5" title="$:/drift/side-by-side/Buttons/pin" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 
 &lt;$button message=&quot;tm-close-tiddler&quot;  tooltip=&quot;Pin in side-bar&quot; aria-label=&quot;Pin in side-bar&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
@@ -12070,7 +12081,7 @@ div.tc-tiddler-body.tc-reveal {
 	color: &lt;&lt;colour foreground&gt;&gt;;
 }</pre>
 </div>
-<div bag="default" created="20200525074313554" creator="akhater" list="$:/drift/side-by-side/ViewTemplate/title $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/sq/streams/nodes-list-template $:/rr/ViewTemplate/LinkedReferences" modified="20210211085720905" modifier="akhater" revision="0" tags="rr-UX rr-TW5" title="$:/drift/side-by-side/ViewTemplate" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200525074313554" creator="akhater" list="$:/drift/side-by-side/ViewTemplate/title $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/sq/streams/nodes-list-template $:/rr/ViewTemplate/LinkedReferences $:/rr/ViewTemplate/ShowUnlinkedReferences $:/rr/ViewTemplate/UnlinkedReferences $:/rr/ViewTemplate/StopUnlinkedReferences" modified="20210506160041776" modifier="akhater" revision="0" tags="rr-UX rr-TW5" title="$:/drift/side-by-side/ViewTemplate" type="text/vnd.tiddlywiki">
 <pre>\define folded-state()
 $:/state/folded/$(currentTiddler)$
 \end
@@ -12112,8 +12123,167 @@ fill:$(foregroundColor)$;
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
+# [[rr-UI]]
+# [[rr-UX]]
+# [[RR-TW5 Files]]
+# [[$:/core/ui/SideBarSegments/tabs]]
+# [[$:/rr/TooManyUnlinkedRefsBanner]]
+# [[$:/config/NewJournal/Title]]
+# [[$:/core/ui/KeyboardShortcuts/new-journal]]
+# [[$:/core/ui/KeyboardShortcuts/toggle-sidebar]]
 # [[$:/drift/side-by-side]]
-# [[$:/rr/side-by-side/shift-click-link]]</pre>
+# [[$:/rr/SideBar/Core]]
+# [[$:/rr/SideBar/Shortcuts]]
+# [[$:/core/ui/SideBar/Open]]
+# [[TiddlyTools/Time/SidebarCalendar]]
+# [[$:/core/ui/SideBarSegments/page-controls]]
+# [[$:/core/ui/SideBarSegments/search]]
+# [[$:/core/ui/SideBarSegments/site-subtitle]]
+# [[$:/core/ui/SideBarSegments/site-title]]
+# [[$:/core/ui/TopBar/menu]]
+# [[$:/config/shortcuts/toggle-sidebar]]
+# [[$:/tags/SideBar]]
+# [[$:/config/shortcuts/streams-demote]]
+# [[$:/config/shortcuts/streams-focus-higher]]
+# [[$:/config/shortcuts/streams-focus-lower]]
+# [[$:/config/shortcuts/streams-indent]]
+# [[$:/config/shortcuts/streams-promote]]
+# [[$:/config/shortcuts/streams-unindent]]
+# [[$:/plugins/snowgoon88/edit-comptext/config]]
+# [[$:/config/DefaultColourMappings/menubar-foreground]]
+# [[$:/config/DefaultColourMappings/menubar-background]]
+# [[$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/sidebar]]
+# [[$:/plugins/tiddlywiki/menubar/items/contents]]
+# [[$:/plugins/tiddlywiki/menubar/items/hamburger]]
+# [[$:/plugins/tiddlywiki/menubar/items/pagecontrols]]
+# [[$:/plugins/tiddlywiki/menubar/items/sidebar]]
+# [[$:/plugins/tiddlywiki/menubar/styles]]
+# [[$:/tags/MenuBar]]
+# [[~ change the UI ~/20201025145016845]]
+# [[~ change the UI ~/20201025151734071]]
+# [[$:/config/ShortcutInfo/add_todo]]
+# [[$:/config/ShortcutInfo/quotation]]
+# [[$:/config/ShortcutInfo/revealPinnedSideBar]]
+# [[$:/config/ShortcutInfo/switch-palette]]
+# [[$:/config/shortcuts/add_todo]]
+# [[$:/config/shortcuts/new-journal]]
+# [[$:/config/shortcuts/quotation]]
+# [[$:/config/shortcuts/revealPinnedSideBar]]
+# [[$:/config/shortcuts/switch-palette]]
+# [[$:/drift/side-by-side/Buttons/pin]]
+# [[$:/drift/side-by-side/images/side-by-side-left]]
+# [[$:/drift/side-by-side/stylesheet]]
+# [[$:/drift/side-by-side/ViewTemplate]]
+# [[$:/drift/side-by-side/ViewTemplate/title]]
+# [[$:/palettes/rr/DayMode]]
+# [[$:/palettes/rr/NightMode]]
+# [[$:/plugins/sq/shift-link-click-actions]]
+# [[$:/rr/Buttons/PageControl/new-DAILYNOTE+HOME]]
+# [[$:/rr/config/check-for-daily-notes]]
+# [[$:/rr/config/LinkedReferencesFilter]]
+# [[$:/rr/config/NewDailyNote/Tags]]
+# [[$:/rr/config/NewJournal/SortDate]]
+# [[$:/rr/config/ShowUnlinkedReferencesFilter]]
+# [[$:/rr/config/StopUnlinkedReferencesFilter]]
+# [[$:/rr/config/TodoFilter]]
+# [[$:/rr/config/UnlinkedReferencesFilter]]
+# [[$:/rr/EditorToolbar/quotation]]
+# [[$:/rr/editorToolbar/todoSnippet]]
+# [[$:/rr/images/kixam/datePicker/icon-with-class]]
+# [[$:/rr/KeyboardShortcuts/revealPinnedSideBar]]
+# [[$:/rr/language/Buttons/dailyNote/Hint]]
+# [[$:/rr/macro/button/inline-move-block-controls]]
+# [[$:/rr/macro/button/stream-as-article]]
+# [[$:/rr/macro/button/stream-as-md]]
+# [[$:/rr/macro/button/stream-as-ol]]
+# [[$:/rr/macro/button/stream-as-p]]
+# [[$:/rr/macro/button/stream-as-ul]]
+# [[$:/rr/macro/convert-stream]]
+# [[$:/rr/macro/query/links/A-X]]
+# [[$:/rr/macro/query/links/A/B]]
+# [[$:/rr/macro/query/links/A/B/C]]
+# [[$:/rr/macro/query/links/A+B]]
+# [[$:/rr/macro/query/links/A+B+C]]
+# [[$:/rr/macro/query/mentions/A]]
+# [[$:/rr/macro/query/mentions/A-not-current]]
+# [[$:/rr/macro/query/noLinks/A]]
+# [[$:/rr/macro/query/prefix/A]]
+# [[$:/rr/macro/query/prefix/A=dailyNote]]
+# [[$:/rr/macro/query/unlinkedReferences]]
+# [[$:/rr/macro/transclude]]
+# [[$:/rr/macro/transclude-as-article]]
+# [[$:/rr/macro/transclude-as-ol]]
+# [[$:/rr/macro/transclude-as-p]]
+# [[$:/rr/macro/transclude-as-ul]]
+# [[$:/rr/pinned]]
+# [[$:/rr/side-by-side/Buttons/close]]
+# [[$:/rr/side-by-side/Buttons/close-pinned]]
+# [[$:/rr/side-by-side/Buttons/fold]]
+# [[$:/rr/side-by-side/Buttons/move-to-storylist]]
+# [[$:/rr/side-by-side/images/side-by-side-right]]
+# [[$:/rr/side-by-side/shift-click-link]]
+# [[$:/rr/side-by-side/sidebar-width-closed]]
+# [[$:/rr/side-by-side/sidebar-width-open]]
+# [[$:/rr/side-by-side/ViewTemplate/top]]
+# [[$:/rr/side-by-side/ViewTemplateNoContent]]
+# [[$:/rr/snippet/Add-Task]]
+# [[$:/rr/snippet/trans_as_p]]
+# [[$:/rr/snippet/unlinkedReferenceCurrent]]
+# [[$:/rr/stream-action-macros]]
+# [[$:/rr/streams/breadcrumbs-titles-view-template]]
+# [[$:/rr/streams/parents-view-template]]
+# [[$:/rr/styles]]
+# [[$:/rr/templateCode/LinkedReferences]]
+# [[$:/rr/templateCode/Todo]]
+# [[$:/rr/ui/Buttons/storyview-toggle]]
+# [[$:/rr/ui/KeyboardShortcuts/add-node]]
+# [[$:/rr/ui/KeyboardShortcuts/switch-palette]]
+# [[$:/rr/UI/modifyEditorView]]
+# [[$:/rr/UI/modifyPageView]]
+# [[$:/rr/UI/modifySideBar]]
+# [[$:/rr/ux/Actions/add-sortdate+tags-to-daily-note]]
+# [[$:/rr/ux/Actions/delete-then-make-new-auto-daily-note]]
+# [[$:/rr/ux/Actions/new-auto-daily-note]]
+# [[$:/rr/ux/Actions/new-daily-note]]
+# [[$:/rr/ux/Actions/new-daily-note-safe]]
+# [[$:/rr/ux/Actions/when-daily-note-exists]]
+# [[$:/rr/ViewTemplate/Todo]]
+# [[$:/rr/ViewTemplate/LinkedReferences]]
+# [[$:/rr/ViewTemplate/UnlinkedReferences]]
+# [[$:/rr/templateCode/UnlinkedReferences]]
+# [[$:/rr/ViewToolbar/AddFavourite]]
+# [[$:/rr/ViewToolbar/DatePicker]]
+# [[$:/themes/jd/Mono/Buttons/switch-palette]]
+# [[$:/themes/jd/Mono/Config/PaletteSwitcher]]
+# [[$:/themes/jd/Mono/Database]]
+# [[$:/themes/tiddlywiki/centralised/styles]]
+# [[ALL DAILY NOTES]]
+# [[DAILY NOTES]]
+# [[All Pages by Date Modified]]
+# [[TODO]]
+# [[Preferences]]
+# [[All Pages in Alphabetical Order]]
+# [[Configuration]]
+# [[DATE SELECTOR]]
+# [[DATE SELECTOR/06.11-05666]]
+# [[DATE SELECTOR/18.20-50538]]
+# [[DATE SELECTOR/18.22-54390]]
+# [[DATE SELECTOR/18.28-23565]]
+# [[DATE SELECTOR/18.37-34260]]
+# [[DONE]]
+# [[Modifications]]
+# [[query]]
+# [[rr-core-page]]
+# [[rr-essentials]]
+# [[rr-plugins]]
+# [[rr-shortcuts]]
+# [[rr-theme]]
+# [[rr-todo]]
+# [[rr-UI-mod]]
+# [[rr-UX-mod]]
+# [[show-unlinked]]
+# [[TiddlyTools/Time/Calendar]]
+# [[rr-TW5]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -14768,16 +14938,16 @@ nav.tc-menubar .tc-more-sidebar &gt; .tc-tab-set &gt; .tc-tab-buttons &gt; butto
 <div bag="default" created="20201111093654865" modified="20201227161626818" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/NewJournal/SortDate" type="text/vnd.tiddlywiki">
 <pre>YYYY0MM0DD</pre>
 </div>
-<div bag="default" created="20210505092331011" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210505093715916" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/ShowUnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210505092331011" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210505093716339" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/ShowUnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
 <pre>[!is[system]!tag[no-refs]!tag[DailyNote]!tag[show-unlinked]parent[]]</pre>
 </div>
-<div bag="default" created="20210505093907248" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210506160109202" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/StopUnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210505093907248" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210506160109431" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/StopUnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
 <pre>[!is[system]!tag[no-refs]!tag[DailyNote]tag[show-unlinked]parent[]]</pre>
 </div>
 <div bag="default" created="20201124191801075" description="Filter that determines which tiddlers get TODOs in their footer" modified="20210419182438316" revision="0" tags="rr-todo rr-UX rr-TW5" title="$:/rr/config/TodoFilter" type="text/vnd.tiddlywiki">
 <pre>[!is[system]!tag[hide]parent[]]</pre>
 </div>
-<div bag="default" created="20201124113718618" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210505083126922" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/UnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124113718618" description="Filter that determines which tiddlers get Unlinked References in the footer" modified="20210505083127120" revision="0" tags="rr-UX rr-TW5" title="$:/rr/config/UnlinkedReferencesFilter" type="text/vnd.tiddlywiki">
 <pre>[!is[system]!tag[no-refs]!tag[DailyNote]tag[show-unlinked]parent[]]</pre>
 </div>
 <div bag="default" caption="{{$:/language/Buttons/Quote/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20201123173431813" description="{{$:/rr/language/Buttons/Quotation/Hint}}" icon="$:/core/images/quote" modified="20210212093029113" revision="0" shortcuts="((quotation))" tags="$:/tags/EditorToolbar rr-UX rr-TW5" title="$:/rr/EditorToolbar/quotation" type="text/vnd.tiddlywiki">
@@ -14808,7 +14978,7 @@ nav.tc-menubar .tc-more-sidebar &gt; .tc-tab-set &gt; .tc-tab-buttons &gt; butto
     &quot;December 2nd, 2020 (Wednesday)&quot;: &quot;created&quot;
 }</pre>
 </div>
-<div bag="default" created="20210211141902773" key="((revealPinnedSideBar))" modified="20210504095358627" revision="19" tags="$:/tags/KeyboardShortcut rr-TW5 rr-UX" title="$:/rr/KeyboardShortcuts/revealPinnedSideBar" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210211141902773" key="((revealPinnedSideBar))" modified="20210504095358659" revision="0" tags="$:/tags/KeyboardShortcut rr-TW5 rr-UX" title="$:/rr/KeyboardShortcuts/revealPinnedSideBar" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;[{$:/rr/pinned}match[active]]&quot; 
 emptyMessage=&quot;&quot;&quot;&lt;$action-setfield $tiddler=&quot;$:/rr/pinned&quot; text=&quot;active&quot;/&gt;
     &lt;$action-listops $tiddler=&quot;$:/drift/side-by-side&quot; $tags=&quot;$:/tags/SideBar&quot; /&gt;
@@ -14876,6 +15046,18 @@ emptyMessage=&quot;&quot;&quot;&lt;$action-setfield $tiddler=&quot;$:/rr/pinned&
 &lt;$action-sendmessage $message=&quot;tm-copy-to-clipboard&quot; $param=&lt;&lt;stream-html&gt;&gt;/&gt;
 &lt;/$wikify&gt;
 Copy stream to clipboard as `&lt;article&gt;&lt;section&gt;` html
+&lt;/$button&gt;
+
+\end</pre>
+</div>
+<div bag="default" created="20210526055900264" modified="20210527075626619" revision="4" tags="$:/tags/Macro rr-UX rr-TW5" title="$:/rr/macro/button/stream-as-md" type="text/vnd.tiddlywiki">
+<pre>\define md-button(X)
+
+&lt;$button&gt;
+&lt;$wikify name=&quot;stream-html&quot; text=&lt;&lt;export-stream-md tiddler:&quot;$X$&quot;&gt;&gt; output=&quot;text&quot; &gt;
+&lt;$action-sendmessage $message=&quot;tm-copy-to-clipboard&quot; $param=&lt;&lt;stream-html&gt;&gt;/&gt;
+&lt;/$wikify&gt;
+Copy stream to clipboard as `– ` list
 &lt;/$button&gt;
 
 \end</pre>
@@ -15325,7 +15507,7 @@ Unlinked References&lt;/h3&gt;&lt;/smallish&gt;&lt;/$reveal&gt;
 &lt;p align=right&gt;&lt;small&gt;(//Transclusion of [[$X$]] as list//)&lt;/small&gt;&lt;/p&gt;
 \end</pre>
 </div>
-<div bag="default" created="20210210175237537" modified="20210506161611594" revision="0" tags="rr-TW5 rr-UX" title="$:/rr/pinned" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210210175237537" modified="20210601065725129" revision="24" tags="rr-TW5 rr-UX" title="$:/rr/pinned" type="text/vnd.tiddlywiki">
 <pre>inactive</pre>
 </div>
 <div bag="default" caption="{{$:/core/images/close-button}} {{$:/language/Buttons/Close/Caption}}" created="20210103082124883" creator="akhater" description="{{$:/language/Buttons/Close/Hint}}" modified="20210310191242472" modifier="akhater" revision="0" tags="rr-UX rr-TW5" title="$:/rr/side-by-side/Buttons/close" type="text/vnd.tiddlywiki">
@@ -15407,7 +15589,7 @@ Close Pinned SideBar  {{$:/core/images/close-button}}
    d=&quot;m 285.6875,0 71.8125,71.6875 -71.8125,71.7188 0,-35.4375 c -10e-4,0.001 -93.11575,-0.8691 -144.59375,54.25 C 165.27375,56.9228 285.6875,35.4063 285.6875,35.4063 L 285.6875,0 z M 192.96875,40.9688 C 177.29075,51.6228 163.60125,63.696 152.03125,77 L 36,77 l 0,298.9688 149.875,0 c 53.005,0 31.5,-68.5313 31.5,-68.5313 0,0 70.1875,22.7805 70.1875,-34.0625 l 0,-89.4687 c 29.286,-29.238 19.42325,-19.3575 36.03125,-35.9375 l 0,128.5312 c 0,55.295 -75.8005,135.5 -137.1875,135.5 L 0,412 0,40.9688 l 192.96875,0 z m 56.15625,141.6562 0,27.0313 -174.6875,0 0,-27.0313 174.6875,0 z m 0.0313,58.9063 0,27.0312 -174.71875,0 0,-27.0312 174.71875&quot;/&gt;
 &lt;/svg&gt;</pre>
 </div>
-<div bag="default" created="20201230073139775" creator="akhater" modified="20210507140715030" modifier="akhater" revision="0" tags="$:/tags/config/sq/shiftclick-link rr-UX rr-TW5" title="$:/rr/side-by-side/shift-click-link" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201230073139775" creator="akhater" modified="20210507140715052" modifier="akhater" revision="0" tags="$:/tags/config/sq/shiftclick-link rr-UX rr-TW5" title="$:/rr/side-by-side/shift-click-link" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
     &lt;$action-setfield $tiddler=&quot;$:/rr/pinned&quot; text=&quot;active&quot;/&gt;
     &lt;$action-listops $tiddler=&quot;$:/drift/side-by-side&quot; $tags=&quot;$:/tags/SideBar&quot; /&gt;
@@ -15452,14 +15634,14 @@ $:/state/folded/$(currentTiddler)$
 &lt;/div&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div bag="default" caption="RR-TW5" created="20201022113249513" list-before="$:/core/ui/SideBar/Open" modified="20210506161611596" revision="0" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Core" type="text/vnd.tiddlywiki">
+<div bag="default" caption="RR-TW5" created="20201022113249513" list-before="$:/core/ui/SideBar/Open" modified="20210601065725132" revision="21" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Core" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc 'rr-core-page'&gt;&gt;
 
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" caption="SHORTCUTS" created="20201103094201681" list-after="$:/rr/SideBar/Core" modified="20210506161611597" revision="0" stream-list="" stream-type="default" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Shortcuts" type="text/vnd.tiddlywiki">
+<div bag="default" caption="SHORTCUTS" created="20201103094201681" list-after="$:/rr/SideBar/Core" modified="20210601065725132" revision="21" stream-list="" stream-type="default" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/SideBar/Shortcuts" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc &quot;rr-shortcuts&quot; &quot;!tag[nolist]sort[created]&quot;&gt;&gt;
@@ -15661,7 +15843,7 @@ $:/state/folded/$(currentTiddler)$
 	margin-bottom: 0em;
 }</pre>
 </div>
-<div bag="default" created="20201124112448219" modified="20210506142610852" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124112448219" modified="20210506142610870" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/LinkedReferences" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/LinkedReferencesFilter}]&quot;&quot;&quot;&gt;
 &lt;$vars num={{{[all[current]backlinks[]]-[[TODO]backlinks[]]+[!tag[hide]!tag[outlines]!tag[TODO]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]+[count[]]}}}&gt;
 &lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
@@ -15712,21 +15894,27 @@ $:/state/folded/$(currentTiddler)$
 
 &lt;/$wikify&gt;</pre>
 </div>
-<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210506142731638" revision="0" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201124113816216" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210531111112345" revision="11" tags="rr-UX rr-TW5" title="$:/rr/templateCode/UnlinkedReferences" type="text/vnd.tiddlywiki">
 <pre>\define PartialMatchPattern()
 $(currentTiddler)$(?i)
 \end
 
+&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/ShowUnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
+    &lt;h3&gt;&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+    &lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;show-unlinked&quot;/&gt;
+    &lt;smallish&gt;{{$:/core/images/right-arrow}}&lt;/smallish&gt; Unlinked References&lt;/$button&gt;&lt;/h3&gt;
+&lt;/$list&gt;
+
 &lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/UnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
 &lt;$set name=pattern value=&lt;&lt;PartialMatchPattern&gt;&gt;&gt;
 &lt;$vars num={{{[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;] +[count[]]}}}&gt;
-&lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot; &gt;
+&lt;$list filter=&quot;[title&lt;num&gt;]+[compare:number:gt[0]]&quot; variable=&quot;dum&quot;&gt;
 
-&lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/UnlinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h3&gt;&lt;$button class=&quot;tc-btn-invisible&quot; setTitle=&quot;$:/temp/UnlinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;&lt;smallish&gt;{{$:/core/images/right-arrow}}&lt;/smallish&gt; &lt;&lt;num&gt;&gt; Unlinked References&lt;/$button&gt;&lt;/h3&gt;&lt;/$reveal&gt;
-
-&lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/UnlinkedFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-&lt;h3&gt;&lt;$button class=&quot;tc-btn-invisible&quot; setTitle=&quot;$:/temp/UnlinkedFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;&lt;smallish&gt;{{$:/core/images/down-arrow}}&lt;/smallish&gt; &lt;&lt;num&gt;&gt; Unlinked References&lt;/$button&gt;&lt;/h3&gt;
+&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/StopUnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
+   &lt;h3&gt;&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+   &lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;-show-unlinked&quot;/&gt;
+&lt;smallish&gt;{{$:/core/images/down-arrow}}&lt;/smallish&gt; &lt;&lt;num&gt;&gt; Unlinked References&lt;/$button&gt;&lt;/h3&gt;
+&lt;/$list&gt;
 
 &lt;$list filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]] +[!sort[created]] :filter[get-stream-root[]!match&lt;storyTiddler&gt;]&quot; variable=&quot;linkRef&quot; &gt;
 &lt;$tiddler tiddler=&lt;&lt;linkRef&gt;&gt;&gt;
@@ -15750,6 +15938,34 @@ $(currentTiddler)$(?i)
 {{$:/core/images/edit-button}}
 &lt;/$button&gt;&lt;br&gt;&lt;small&gt;''path'': {{||$:/plugins/sq/streams/breadcrumbs-view-template}}&lt;/small&gt;&lt;/h5&gt;
 &lt;/$reveal&gt;</pre>
+</div>
+<div created="20210407162959692" list-before="$:/core/ui/SideBar/Open" modified="20210601065906921" tags="$:/tags/SideBar rr-TW5 rr-UX" title="$:/rr/TooManyUnlinkedRefsBanner" type="text/vnd.tiddlywiki">
+<pre>&lt;$set name=&quot;numOpen&quot; value={{{ [tag[show-unlinked]count[]] }}}&gt;
+&lt;$list filter=&quot;[{$:/config/rr/HideUnlinkedRefWarning}!text[yes]is[blank]]&quot;&gt;
+&lt;$list filter=&quot;[tag[show-unlinked]count[]compare:number:gt[20]]&quot;&gt;
+&lt;div class=&quot;gtw-tiddler-excess-banner&quot;&gt;
+	&lt;div style=&quot;display: inline-block; vertical-align: center; margin-top: 6px; margin-left: 1em;&quot;&gt;
+		&lt;span style=&quot;height: 44px&quot;&gt;{{$:/core/images/info-button}}&lt;/span&gt;
+	&lt;/div&gt;
+		&lt;div style=&quot;display: inline-block; margin-left: 1em;&quot;&gt;
+		&lt;&lt;numOpen&gt;&gt; pages with&lt;br&gt;Unlinked References
+	&lt;/div&gt;
+
+&lt;div style=&quot;margin-left: calc(44px + 1em); margin-right: 4em;&quot;&gt;
+
+Running this many searches for mentions of page titles may cause poor performance. &lt;br&gt;
+Consider turning some of them off: [[here|show-unlinked]]
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;$button set=&quot;$:/config/rr/HideUnlinkedRefWarning&quot; setTo=&quot;yes&quot; class=&quot;tc-tiddlylink tc-btn-invisible&quot;&gt;
+  Click here to not show this warning again
+&lt;/$button&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;</pre>
 </div>
 <div bag="default" caption="Toggle story view" created="20210120090703965" description="Show single or multiple pages at a time" modified="20210213125101166" revision="0" tags="$:/tags/PageControls rr-TW5 rr-UI" title="$:/rr/ui/Buttons/storyview-toggle" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
@@ -15939,26 +16155,12 @@ $:/core/images/storyview-$(storyview)$
 {{||$:/rr/templateCode/LinkedReferences}}
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" caption="Show Unlinked References" created="20210505090715960" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210505094939414" revision="0" tags="$:/tags/ViewTemplate rr-retrieve rr-UX rr-TW5" title="$:/rr/ViewTemplate/ShowUnlinkedReferences" type="text/vnd.tiddlywiki">
-<pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/ShowUnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
-   &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-   &lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;show-unlinked&quot;/&gt;
-&lt;h3&gt; + Find Unlinked References&lt;/h3&gt;&lt;/$button&gt;
-&lt;/$list&gt;</pre>
-</div>
-<div bag="default" caption="Stop Finding Unlinked References" created="20210505094842379" list-after="$:/rr/ViewTemplate/UnlinkedReferences" modified="20210506160109205" revision="0" tags="$:/tags/ViewTemplate rr-retrieve rr-UX rr-TW5" title="$:/rr/ViewTemplate/StopUnlinkedReferences" type="text/vnd.tiddlywiki">
-<pre>&lt;$list filter=&quot;&quot;&quot;[all[current]subfilter{$:/rr/config/StopUnlinkedReferencesFilter}]&quot;&quot;&quot;&gt;
-   &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-   &lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;-show-unlinked&quot;/&gt;
-&lt;h3&gt; - Stop Finding Unlinked References&lt;/h3&gt;&lt;/$button&gt;
-&lt;/$list&gt;</pre>
-</div>
 <div bag="default" caption="TODOs" created="20201022113249489" description="The TODO View Template" list-before="$:/rr/ViewTemplate/LinkedReferences" modified="20210419182438278" revision="0" tags="$:/tags/ViewTemplate hide rr-retrieve rr-todo rr-UX rr-TW5" title="$:/rr/ViewTemplate/Todo" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[&lt;folded-state&gt;get[text]!is[blank]else[show]!match[hide]]&quot;&quot;&quot; variable=&quot;_NULL&quot;&gt;
 {{||$:/rr/templateCode/Todo}}
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" caption="Unlinked References" created="20201107152643813" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210213143259507" revision="0" tags="$:/tags/ViewTemplate rr-retrieve rr-UX rr-TW5" title="$:/rr/ViewTemplate/UnlinkedReferences" type="text/vnd.tiddlywiki">
+<div bag="default" caption="Unlinked References" created="20201107152643813" list-after="$:/rr/ViewTemplate/LinkedReferences" modified="20210504175930471" revision="0" tags="$:/tags/ViewTemplate rr-retrieve rr-UX rr-TW5" title="$:/rr/ViewTemplate/UnlinkedReferences" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;&quot;&quot;[&lt;folded-state&gt;get[text]!is[blank]else[show]!match[hide]]&quot;&quot;&quot; variable=&quot;_NULL&quot;&gt;
 {{||$:/rr/templateCode/UnlinkedReferences}}
 &lt;/$list&gt;</pre>
@@ -15993,7 +16195,7 @@ $:/core/images/storyview-$(storyview)$
 &lt;/$button&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div bag="default" created="20210422180704475" modified="20210502173932876" revision="0" tags="rr-TW5 rr-UX" title="$:/rr/ViewToolbar/DatePicker" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210422180704475" modified="20210502173932906" revision="0" tags="rr-TW5 rr-UX" title="$:/rr/ViewToolbar/DatePicker" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 
 &lt;$button message=&quot;tm-close-tiddler&quot;  tooltip=&quot;Schedule Task&quot; aria-label=&quot;Choose a Date&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
@@ -16088,8 +16290,8 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210502172816425" modified="20210502172816425" title="$:/state/tab1-2008648010">
 <pre>rr-UI-mod</pre>
 </div>
-<div created="20210213123539251" modified="20210506161309924" title="$:/state/tab1-488476099">
-<pre>show-unlinked</pre>
+<div created="20210213123539251" modified="20210601072259005" title="$:/state/tab1-488476099">
+<pre>rr-TW5</pre>
 </div>
 <div created="20210506161555299" modified="20210506161555299" title="$:/state/tab1-915904190">
 <pre>show-unlinked</pre>
@@ -16107,12 +16309,12 @@ $:/core/images/storyview-$(storyview)$
 <pre>no</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>no</pre>
+<pre>yes</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210507140822598" list="[[Download This Wiki as index.html]] [[DAILY NOTES]]" modified="20210507140822598" title="$:/StoryList">
+<div created="20210601072243623" list="[[RR-TW5 Files]] $:/Import [[DAILY NOTES]]" modified="20210601072608238" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20201231174724669" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/sidebar $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar" modified="20210212200236476" revision="0" tags="rr-TW5 rr-UI-mod" title="$:/tags/MenuBar" type="text/vnd.tiddlywiki">
@@ -16176,7 +16378,7 @@ $:/core/images/storyview-$(storyview)$
     &quot;day-palette&quot;: &quot;$:/palettes/rr/DayMode&quot;
 }</pre>
 </div>
-<div bag="default" created="20210301164833161" modified="20210505184836587" revision="0" tags="rr-TW5 rr-UI" title="$:/themes/tiddlywiki/centralised/styles" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210301164833161" modified="20210601065724463" revision="14" tags="rr-TW5 rr-UI" title="$:/themes/tiddlywiki/centralised/styles" type="text/vnd.tiddlywiki">
 <pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
 
 @media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
@@ -16333,8 +16535,8 @@ $:/core/images/storyview-$(storyview)$
 <div bag="default" created="20200127172539001" modified="20210506161552580" revision="0" tags="tb" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20210213144029302" modified="20210505180114752" title="$:/view">
-<pre>zoomin</pre>
+<div created="20210213144029302" modified="20210601072322098" title="$:/view">
+<pre>pop</pre>
 </div>
 <div created="20201026112941686" modified="20201026122936213" parent="2020/10/26/20201026122846202" stream-list="2020/10/26/20201026112952869" stream-type="default" title="2020/10/26/20201026112941684">
 <pre>Who is [[Jung]]?</pre>
@@ -16789,23 +16991,23 @@ $:/core/images/storyview-$(storyview)$
 <div created="20201201190032069" modified="20201201190045613" title="DailyNote">
 <pre></pre>
 </div>
-<div bag="default" created="20210422182023369" modified="20210505183854891" revision="0" stream-list="[[DATE SELECTOR/18.20-50538]] [[DATE SELECTOR/18.22-54390]] [[DATE SELECTOR/18.37-34260]] [[DATE SELECTOR/18.28-23565]]" stream-type="default" tags="rr-TW5 rr-essentials rr-shortcuts" title="DATE SELECTOR" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210422182023369" modified="20210502174546337" revision="0" stream-list="[[DATE SELECTOR/18.20-50538]] [[DATE SELECTOR/18.22-54390]] [[DATE SELECTOR/18.37-34260]] [[DATE SELECTOR/18.28-23565]]" stream-type="default" tags="rr-shortcuts rr-TW5 rr-essentials" title="DATE SELECTOR" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20210502061105692" modified="20210502174402484" parent="DATE SELECTOR/18.37-34260" stream-list="" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/06.11-05666">
+<div bag="default" created="20210502061105692" modified="20210502174402819" parent="DATE SELECTOR/18.37-34260" revision="0" stream-list="" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/06.11-05666" type="text/vnd.tiddlywiki">
 <pre>Possibly replacing the transcluded add date button if you won't want to change the date.</pre>
 </div>
-<div bag="default" created="20210422182050563" modified="20210502174602524" parent="DATE SELECTOR" revision="0" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.20-50538" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210422182050563" modified="20210502174603279" parent="DATE SELECTOR" revision="0" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.20-50538" type="text/vnd.tiddlywiki">
 <pre>{{TiddlyTools/Time/SidebarCalendar}}</pre>
 </div>
-<div bag="default" created="20210422182254417" modified="20210505181636565" parent="DATE SELECTOR" revision="0" stream-list="" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.22-54390" type="text/vnd.tiddlywiki">
-<pre>Select a date to go to (or create) a Daily Note entry. Current entries are grey on the calendar. Today is blue.</pre>
+<div bag="default" created="20210422182254417" modified="20210502174328966" parent="DATE SELECTOR" revision="0" stream-list="" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.22-54390" type="text/vnd.tiddlywiki">
+<pre>Select a date to go to a Daily Note entry. </pre>
 </div>
-<div bag="default" created="20210422182823585" modified="20210502174417757" parent="DATE SELECTOR" revision="0" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.28-23565" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210422182823585" modified="20210502174418173" parent="DATE SELECTOR" revision="0" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.28-23565" type="text/vnd.tiddlywiki">
 <pre>[[See the whole year at once|TiddlyTools/Time/Calendar]]</pre>
 </div>
-<div bag="default" created="20210422183734283" modified="20210505181705188" parent="DATE SELECTOR" revision="0" stream-list="[[DATE SELECTOR/06.11-05666]]" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.37-34260" type="text/vnd.tiddlywiki">
-<pre>If you want to link to a date, choose the copy to clipboard icon to the right and paste within `[[ ]]` in your task block. </pre>
+<div bag="default" created="20210422183734283" modified="20210502174347558" parent="DATE SELECTOR" revision="0" stream-list="[[DATE SELECTOR/06.11-05666]]" stream-type="default" tags="rr-TW5 rr-essentials" title="DATE SELECTOR/18.37-34260" type="text/vnd.tiddlywiki">
+<pre>If you want to link to a date, choose edit, copy title, cancel edit, and paste within `[[ ]]` in your task block. </pre>
 </div>
 <div created="20201202081445060" modified="20210504121300401" parent="November 3rd, 2020/20201108200008087" stream-list="[[December 1st, 2020 (Tuesday)/08.16-36614]] [[December 1st, 2020 (Tuesday)/08.15-274]]" stream-type="default" title="December 1st, 2020 (Tuesday)/08.14-4559">
 <pre>A suggested approach would be to open all the links on this daily note and delete the ones you don't want to keep.</pre>
@@ -16846,7 +17048,7 @@ $:/core/images/storyview-$(storyview)$
 <div created="20210213135343822" modified="20210213135424032" parent="December 1st, 2020 (Tuesday)/20210213135335270" stream-type="default" title="December 1st, 2020 (Tuesday)/20210213135343818">
 <pre>Let's create a new daily note, add some blocks, add a few pages, and explore the features</pre>
 </div>
-<div bag="default" created="20201025142022829" modified="20210505182256177" revision="0" tags="hide rr-essentials rr-TW5 rr-todo" title="DONE" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201025142022829" modified="20210505182309941" revision="0" tags="hide rr-essentials rr-TW5 rr-todo" title="DONE" type="text/vnd.tiddlywiki">
 <pre>&lt;br&gt;
 &lt;$list filter=&quot;[!tag[hide]tag[done]!sort[modified]]&quot;&gt;
 ~~{{!!text}}~~&lt;br&gt;&lt;small&gt;&lt;$link&gt;Added&lt;/$link&gt;: {{||$:/rr/streams/parents-view-template}}&lt;/small&gt;&lt;br&gt;&lt;br&gt;
@@ -17302,7 +17504,7 @@ With descriptions of the modifications made to other people's code
 <div bag="default" created="20201104094501033" modified="20201104094534009" parent="November 4th, 2020 (Wednesday)/20201104094443644" revision="0" stream-list="" stream-type="default" title="November 4th, 2020 (Wednesday)/20201104094501032" type="text/vnd.tiddlywiki">
 <pre>Merge with block above in same indentation level</pre>
 </div>
-<div bag="default" caption="PREFERENCES" created="20201025142022817" list-after="All Pages by Date Modified" modified="20210505183851444" revision="0" stream-list="[[~ change the UI ~/20201025145016845]] Preferences/19.46-461 [[~ change the UI ~/20201025151734071]] Preferences/06.26-21702" stream-type="default" tags="rr-TW5 rr-core-page rr-essentials" title="Preferences" type="text/vnd.tiddlywiki">
+<div bag="default" caption="PREFERENCES" created="20201025142022817" list-after="All Pages by Date Modified" modified="20210507140737632" revision="0" stream-list="[[~ change the UI ~/20201025145016845]] Preferences/19.46-461 [[~ change the UI ~/20201025151734071]] Preferences/06.26-21702" stream-type="default" tags="rr-TW5 rr-core-page rr-essentials" title="Preferences" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20210212195127688" modified="20210212195127688" parent="Preferences" stream-list="" stream-type="default" title="Preferences/20210212195127683">
@@ -17500,7 +17702,7 @@ With descriptions of the modifications made to other people's code
 <div created="20201026124324946" modified="20201026124337105" parent="Queries/20201026124114838" stream-type="default" title="Queries/20201026124324945">
 <pre>Here's an example in [[Mahatma Gandhi]].</pre>
 </div>
-<div bag="default" caption="QUERIES" created="20201025151442437" modified="20201227094431619" revision="0" stream-list="query/20201103094552469 query/08.00-12421" stream-type="default" tags="rr-shortcuts rr-TW5" title="query" type="text/vnd.tiddlywiki">
+<div bag="default" caption="QUERIES" created="20201025151442437" modified="20210505095307780" revision="0" stream-list="query/20201103094552469 query/08.00-12421" stream-type="default" tags="rr-TW5 rr-shortcuts" title="query" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20210214052601590" modified="20210214052601590" title="RadioWidget Example">
@@ -17549,10 +17751,19 @@ With descriptions of the modifications made to other people's code
 
 &lt;$list filter=&quot;[tag[rr-todo]] +[!sort[modified]]&quot;&gt;''&lt;$view field=&quot;description&quot;/&gt;''&lt;br&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br&gt;&lt;small&gt;//Follow the link above to view this page//&lt;/small&gt;&lt;br&gt;&lt;small&gt;Last Edited: &lt;$view field=&quot;modified&quot;/&gt;&lt;/small&gt;&lt;br&gt;&lt;hr&gt;&lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20201127105638512" modified="20210506161557856" revision="0" tags="FAVOURITES rr-TW5 rr-essentials" title="RR-TW5 Files" type="text/vnd.tiddlywiki">
-<pre>&lt;&lt;tabs &quot;[tag[rr-tags]nsort[order]]&quot; &quot;Modifications&quot; &quot;$:/state/tab1&quot;&gt;&gt;</pre>
+<div bag="default" caption="Everything for RR-TW5" created="20210601071325610" modified="20210601071729112" revision="14" tags="rr-TW5 rr-tags" title="rr-TW5" type="text/vnd.tiddlywiki">
+<pre>''There are &lt;$count filter=&quot;[tag[rr-TW5]]&quot;/&gt;
+ pages that are part of this instance of TiddlyWiki.''
+&lt;br&gt;Every page or block that is needed to make this run has the &lt;&lt;tag rr-TW5&gt;&gt;tag. Listed below are all the pages and files (by modification date) you will need. Use this for a quick check if you have the latest versions.
+
+&lt;$list filter=&quot;[tag[rr-TW5]] +[!sort[modified]]&quot;&gt;
+&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br&gt;
+&lt;small&gt;//Follow the link above to view this page//&lt;/small&gt;&lt;br&gt;&lt;small&gt;Last Edited: &lt;$view field=&quot;modified&quot;/&gt;&lt;/small&gt;&lt;br&gt;&lt;hr&gt;&lt;/$list&gt;</pre>
 </div>
-<div bag="default" caption="User Interface" created="20201127120517489" list-after="Modifications" modified="20201227094433670" revision="0" tags="rr-tags rr-TW5" title="rr-UI" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201127105638512" modified="20210601071744614" revision="0" tags="FAVOURITES rr-TW5 rr-essentials" title="RR-TW5 Files" type="text/vnd.tiddlywiki">
+<pre>&lt;&lt;tabs &quot;[tag[rr-tags]nsort[order]]&quot; &quot;Everything for RR-TW5&quot; &quot;$:/state/tab1&quot;&gt;&gt;</pre>
+</div>
+<div bag="default" caption="User Interface" created="20201127120517489" modified="20210601071819637" revision="0" tags="rr-tags rr-TW5" title="rr-UI" type="text/vnd.tiddlywiki">
 <pre>''There are &lt;$count filter=&quot;[tag[rr-UI]] -[tag[rr-UI-mod]]&quot;/&gt;
  files with a &lt;&lt;tag rr-UI&gt;&gt; without also a &lt;&lt;tag rr-UI-mod&gt;&gt; tag. These were all co-created to make this site look right.''
 &lt;br&gt;Here they are listed according to modification date (most recent first).
@@ -17567,7 +17778,7 @@ With descriptions of the modifications made to other people's code
 &lt;$list filter=&quot;[tag[rr-UI-mod]] +[!sort[modified]]&quot;&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br/&gt;//&lt;$view field=&quot;rr-mod&quot;/&gt;//&lt;br&gt;&lt;small&gt;Last Edited: &lt;$view field=&quot;modified&quot;/&gt;&lt;/small&gt;&lt;br&gt;&lt;hr&gt;&lt;/$list&gt;
 </pre>
 </div>
-<div bag="default" caption="User Experience" created="20201127120104029" list-after="Modifications" modified="20201227094433959" revision="0" tags="rr-tags rr-TW5" title="rr-UX" type="text/vnd.tiddlywiki">
+<div bag="default" caption="User Experience" created="20201127120104029" modified="20210601071819635" revision="0" tags="rr-tags rr-TW5" title="rr-UX" type="text/vnd.tiddlywiki">
 <pre>''There are &lt;$count filter=&quot;[tag[rr-UX]]-[tag[rr-UX-mod]]&quot;/&gt;
  files with a &lt;&lt;tag rr-UX&gt;&gt;, without also a &lt;&lt;tag rr-UX-mod&gt;&gt; tag, they were co-created to make this site work.''
 &lt;br&gt;Here they are listed according to modification date (most recent first).
@@ -17582,12 +17793,14 @@ With descriptions of the modifications made to other people's code
 &lt;$list filter=&quot;[tag[rr-UX-mod]] +[!sort[modified]]&quot;&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br/&gt;//&lt;$view field=&quot;rr-mod&quot;/&gt;//&lt;br&gt;&lt;small&gt;Last Edited: &lt;$view field=&quot;modified&quot;/&gt;&lt;/small&gt;&lt;br&gt;&lt;hr&gt;&lt;/$list&gt;
 </pre>
 </div>
-<div bag="default" caption="Finding Unlinked References" created="20210506160808844" modified="20210506161445720" revision="0" tags="rr-TW5 rr-tags" title="show-unlinked" type="text/vnd.tiddlywiki">
+<div bag="default" caption="Finding Unlinked References" created="20210506160808844" modified="20210531123412707" revision="14" tags="rr-TW5 rr-tags" title="show-unlinked" type="text/vnd.tiddlywiki">
 <pre>''There are &lt;$count filter=&quot;[tag[show-unlinked]]&quot;/&gt;
- pages that are being searched for unlinked references.'' Bear in mind that the code to search for mentions of page titles all over the site takes a lot of energy, and may slow down your site.
-&lt;br&gt;Here are all the files tagged &lt;&lt;tag show-unlinked&gt;&gt; listed according to modification date.
+ pages that are being searched for unlinked references.''
+&lt;br&gt;To save on computing power only pages tagged &lt;&lt;tag show-unlinked&gt;&gt;have their title searched for mentions across the whole wiki. The titles of the pages listed below (by modification date) are all being currently searched for. Uncheck to save resources and stop searching for mentions of that page.
 
-&lt;$list filter=&quot;[tag[show-unlinked]] +[!sort[modified]]&quot;&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br&gt;&lt;small&gt;//Follow the link above to view this page//&lt;/small&gt;&lt;br&gt;&lt;small&gt;Last Edited: &lt;$view field=&quot;modified&quot;/&gt;&lt;/small&gt;&lt;br&gt;&lt;hr&gt;&lt;/$list&gt;</pre>
+&lt;$list filter=&quot;[tag[show-unlinked]] +[!sort[modified]]&quot;&gt;
+&lt;$checkbox tag=&quot;show-unlinked&quot;&gt;&amp;nbsp;&lt;/$checkbox&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br&gt;
+&lt;small&gt;//Follow the link above to view this page//&lt;/small&gt;&lt;br&gt;&lt;small&gt;Last Edited: &lt;$view field=&quot;modified&quot;/&gt;&lt;/small&gt;&lt;br&gt;&lt;hr&gt;&lt;/$list&gt;</pre>
 </div>
 <div bag="default" created="20201023185303941" modified="20201023185303956" revision="0" title="this page" type="text/vnd.tiddlywiki">
 <pre></pre>
@@ -17955,7 +18168,7 @@ Year: &lt;&lt;controls_getyear&gt;&gt; Month: &lt;&lt;controls_getmonth&gt;&gt;&
 
 &lt;&lt;calendar&gt;&gt;</pre>
 </div>
-<div bag="default" caption="CALENDAR" created="20200904020839440" list-after="$:/core/ui/SideBar/Open" modified="20210505183002341" revision="0" tags="rr-TW5 rr-UX" title="TiddlyTools/Time/SidebarCalendar" type="text/vnd.tiddlywiki">
+<div bag="default" caption="CALENDAR" created="20200904020839440" list-after="$:/core/ui/SideBar/Open" modified="20210430185307332" revision="0" tags="rr-TW5 rr-UX" title="TiddlyTools/Time/SidebarCalendar" type="text/vnd.tiddlywiki">
 <pre>\define tt_time_config() $:/config/TiddlyTools/Time
 
 \import TiddlyTools/Time/Calendar
@@ -17973,7 +18186,7 @@ Year: &lt;&lt;controls_getyear&gt;&gt; Month: &lt;&lt;controls_getmonth&gt;&gt;&
 <div bag="default" created="20201022175414943" modified="20201022175415079" revision="0" title="TiddlyWiki" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div bag="default" caption="TASKS &amp; TODO" created="20201025151437359" list-before="Preferences" modified="20210505182237691" revision="0" stream-list="TODO/20201111075651144 TODO/20201114190013587 TODO/20201114190112581" stream-type="default" tags="hide rr-TW5 rr-essentials rr-shortcuts rr-todo" title="TODO" type="text/vnd.tiddlywiki">
+<div bag="default" caption="TASKS &amp; TODO" created="20201025151437359" list-before="Preferences" modified="20210531204106276" revision="0" stream-list="TODO/20201111075651144 TODO/20201114190013587 TODO/20201114190112581" stream-type="default" tags="hide rr-TW5 rr-essentials rr-shortcuts rr-todo" title="TODO" type="text/vnd.tiddlywiki">
 <pre>!!! All tasks
 
 &lt;$list filter=&quot;[all[current]backlinks[]!tag[done]!tag[hide]sort[created]]&quot;&gt;
